@@ -1,0 +1,117 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Tah Die</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="TAH is a open bluetooth low energy hardware platform" />
+  <meta name="keywords" content="tah, bluetooth, low energy, bluetooth low energy, hardware, open hardware, rhc, revealing hour creations" />
+  <link rel="shortcut icon" href="http://tah.io/favicon.ico" />
+
+  <link rel="stylesheet" href="/css/skel.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style-wide.css" />
+  
+  <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.dropotron.min.js"></script>
+  <script type="text/javascript" src="/js/skel.min.js"></script>
+  <script type="text/javascript" src="/js/skel-layers.min.js"></script>
+  <script type="text/javascript" src="/js/init.js"></script>
+  <script type="text/javascript" src="/js/mailchimp.js"></script>
+
+  <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+ 
+</head>
+<body class="index loading">
+ 
+  <!-- Header -->
+  <header id="header" class="reveal">
+    <h1 id="logo"><a href="/index.html"><img src="/images/tah_new.jpg" width="30px" id="tah_logo"/></a></h1>
+    <nav id="nav">
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/blogs/index.html">Blog</a></li>
+        <li class="current"><a href="../../index.html">Docs</a></li>
+        <li><a href="http://discuss.tah.io" target="_blank">Discuss</a></li>
+        <li><a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank" class="button special">Pre-order now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ 
+  <!-- Main -->
+  <article class="docs">
+    <section class="wrapper container">
+      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+      <h2>Electronic Die with Tah</h2>
+
+      <p>[Image of die]</p>
+
+      <p>Tah is a Bluetooth Low Energy open source development platform compatible with the Arduino.</p>
+
+      <p>The Tah can be used for doing some interesting projects like the electronic die. Just roll the die and see its face value on your smartphone in realtime!</p>
+
+      <h3>Requirements</h3>
+
+      <ul class="task-list">
+      <li>Tah</li>
+      <li>General PCB board</li>
+      <li>ADXL335 3-axis accelerometer</li>
+      <li>7805 voltage regulator</li>
+      <li>3D-printed plastic casing for the die (find one <a href="http://www.thingiverse.com/thing:17963">here</a>)</li>
+      <li>9V HW battery</li>
+      <li>Male pinheads</li>
+      <li>Female pinheads</li>
+      <li>Wire stripper</li>
+      <li>Soldering gun and soldering metal</li>
+      <li>A computer with the Arduino IDE installed</li>
+      <li>iPhone 4S and above with the <a href="https://github.com/tah-io/iOS/tree/master/TAH%20Cube">Tah Cube app</a> installed</li>
+      </ul><p>[Images of all materials]</p>
+
+      <div class="example_step">
+        <h3>Step 1</h3>
+
+        <p>Tah is Arduino-compatible and is programmed using the Arduino IDE, so download and install the IDE from <a href="http://arduino.cc/en/Main/Software#toc2">here</a>.</p>
+
+        <p>Cut the PCB per your design and solder the male and female pinheads as shown in the image below. Use the analog pins of the Tah to interface the ADXL335 accelerometer. Here we are using the A2, A3 and A4 analog channels to read the positions of the X, Y and Z axis coordinates. Refer to the ADXL335 accelerometer's <a href="https://www.sparkfun.com/datasheets/Components/SMD/adxl335.pdf">datasheet</a> for details.</p>
+
+        <p>[Circuit diagram]</p>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 2</h3>
+
+        <p>Connect the LM7805 voltage regulator as per circuit diagram to step down and regulate the constant 5V DC with filter capacitors.</p>
+
+        <p>Install the <a href="https://github.com/tah-io/sketches/tree/master/TAH%20Arduino%20Library">Tah Arduino library</a> in the Arduino IDE and compile the <a href="https://github.com/tah-io/sketches/tree/master/TAH_Cube">"Tah Cube"</a> sketch from the examples.</p>
+
+        <p>[Soldered PCB Board]</p>
+      </div>
+
+      <h3>Step 3</h3>
+
+      <ul class="task-list">
+      <li>Open the Tah Cube app on your iPhone</li>
+      <li>Scan for Bluetooth Devices in the app</li>
+      <li>Connect with the device named CUBE</li>
+      </ul><p>You can now roll the die to have the numbers show up in the app!</p>
+
+      <p>[Images of Die and phone with O/p]</p>
+
+      <p>Watch the video.</p>
+      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+    </section>
+  </article>
+
+  <footer id="footer">
+    <ul class="icons">
+      <li><a href="http://twitter.com/tah_io" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="https://www.facebook.com/pages/Tah/633568926721880" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+      <li><a href="http://github.com/tah-io" class="icon circle fa-github"><span class="label">Github</span></a></li>
+    </ul>
+    <span class="copyright">&copy; Revealing Hour Creations. All rights reserved. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+  </footer>
+</body>
+</html>
