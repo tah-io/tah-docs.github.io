@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Motion Control</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Tah is a open bluetooth low energy hardware platform" />
+  <meta name="keywords" content="tah, bluetooth, low energy, bluetooth low energy, hardware, open hardware, rhc, revealing hour creations" />
+  <link rel="shortcut icon" href="http://tah.io/favicon.ico" />
+
+  <noscript>
+    <link rel="stylesheet" href="/css/skel.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <link rel="stylesheet" href="/css/style-noscript.min.css" />
+  </noscript>
+
+  <script src="/js/application.js"></script>
+</head>
+<body class="index loading">
+ 
+  <!-- Header -->
+  <header id="header" class="reveal">
+    <h1 id="logo"><a href="http://tah.io"><img src="/images/tah_new.jpg" width="30px" id="tah_logo"/></a></h1>
+    <nav id="nav">
+      <ul>
+        <li><a href="http://tah.io">Home</a></li>
+        <li><a href="http://blog.tah.io">Blog</a></li>
+        <li class="current submenu">
+          <a href="/index.html">Docs</a>
+          <ul>
+            <li class="submenu">
+              <a href="/examples">Examples</a>
+              <ul>
+                <li><a href="/examples/badge">Badge</a></li>
+                <li><a href="/examples/dice">Dice</a></li>
+                <li><a href="/examples/motion-control">Motion Control</a></li>
+                <li><a href="/examples/rgb">RGB</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="http://discuss.tah.io" target="_blank">Discuss</a></li>
+        <li><a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank" class="button special">Pre-order now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ 
+  <!-- Main -->
+  <article class="docs">
+    <section class="wrapper custom_container">
+      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+      <center><h2>Tah Motion Control</h2></center>
+
+      <p>Tah is a Bluetooth Low Energy open source development platform compatible with the Arduino.</p>
+
+      <p>In this example, we are going to take a look at the Tah Motion Control app which let's you control your laptop or desktop from a distance.</p><br/>
+
+      <div class="example_step">
+        <h3>Step 1</h3>
+
+        <p>Connect the Tah board to the USB port and open the Arduino IDE. <a href="https://github.com/tah-io/sketches/archive/master.zip">Download</a> the Tah library and rename it to Tah after extracting.</p>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 2</h3>
+
+        <ul class="task-list">
+          <li>Add it to the Arduino IDE <strong><em>Sketch->Import Library->Add Library</em></strong></li>
+          <li>Restart the Arduino IDE and open the following example <strong><em>File -> Examples -> Tah -> MotionControl</em></strong></li>
+          <li>Select <strong><em>Arduino Leonardo</em></strong> from <strong><em>Tools -> Board</em></strong>. Also select the correct USB port</li>
+        </ul>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 3</h3>
+
+        <ul class="task-list">
+          <li>Restart the Arduino IDE and open the following example <strong><em>File -> Examples -> Tah -> MotionControl</em></strong></li>
+          <li>Select <strong><em>Arduino Leonardo</em></strong> from <strong><em>Tools -> Board</em></strong>. Also select the correct USB port</li>
+          <li>Compile and Upload</li>
+        </ul>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 4</h3>
+
+        
+        <div class="row">
+          <div class="6u" style="padding-top:16%">
+            <ul class="task-list">
+              <li>Next, get the <a href="https://github.com/tah-io/iOS/tree/master/TAH%20Motion%20Control">Tah Motion Control app </a>from the GitHub repo</li>
+              <li>Enable Bluetooth, and then open the app </li>
+            </ul>
+          </div>
+          <div class="6u">
+            <center>
+              <span class="app_screenshot"><img src="/images/tah_moco_app.jpg"></span>
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 5</h3>
+        
+        <div class="row">
+          <div class="6u" style="padding-top:16%">
+            <ul class="task-list">
+              <li>Scan for the nearby Bluetooth devices and select 'Tah Motion Control'</li>
+            </ul>
+          </div>
+          <div class="6u">
+            <center>
+              <span class="app_screenshot"><img src="/images/scanning.jpg"></span>
+            </center>
+          </div>
+        </div>
+        <div class="row">
+          <div class="6u" style="padding-top:16%">
+            <ul class="task-list">
+              <li>Once the indicator at the bottom turns green, press the home button which is in the top right corner of the screen</li>
+            </ul> 
+          </div>
+          <div class="6u">
+            <center>
+              <span class="app_screenshot"><img src="/images/connected.jpg"></span>
+            </center>
+          </div>
+        </div>
+        <div class="row">
+          <div class="6u" style="padding-top:16%">
+            <ul class="task-list">
+              <li>Select your operating system on the next screen.</li>
+            </ul>
+          </div>
+          <div class="6u">
+            <center>
+              <span class="app_screenshot"><img src="/images/os.jpg"></span>
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 6</h3>
+
+        <div class="row">
+          <div class="6u" style="padding-top:16%">
+            <ul class="task-list">
+              <li>You can either control the Music Player(iTunes in the case of Mac) or a Presentation</li>
+            </ul>
+          </div>
+          <div class="6u">
+            <center>
+              <span class="app_screenshot"><img src="/images/media_player.jpg"></span>
+            </center>
+          </div>
+        </div>
+        <div class="row">
+          <div class="6u" style="padding-top:16%">
+            <ul class="task-list">
+              <li>When you are controlling the Music player, you Play, Pause, go to the Previous and Next song or control the volume.
+              To control the volume, press the sound icon, and tilt your phone on the left and the right</li>
+            </ul>
+          </div>
+          <div class="6u">
+            <center>
+              <span class="app_screenshot"><img src="/images/vol_tilt.jpg"></span>
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 7</h3>
+
+        <div class="row">
+          <div class="6u" style="padding-top:16%">
+            <ul class="task-list">
+              <li>When you are controlling the Presentation, swipe on the screen in the direction of your next slide</li>
+            </ul>
+          </div>
+          <div class="6u">
+            <center>
+              <span class="app_screenshot"><img src="/images/presentation.jpg"></span>
+            </center>
+          </div>
+        </div>
+      </div>
+      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+    </section>
+  </article>
+
+  <footer id="footer">
+    <ul class="icons">
+      <li><a href="http://twitter.com/tah_io" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="https://www.facebook.com/pages/Tah/633568926721880" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+      <li><a href="http://github.com/tah-io" class="icon circle fa-github"><span class="label">Github</span></a></li>
+    </ul>
+    <span class="copyright">&copy; <a href="http://revealinghour.in">Revealing Hour Creations.</a> All rights reserved. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+  </footer>
+</body>
+</html>

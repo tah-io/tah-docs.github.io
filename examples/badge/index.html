@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Tah Badge</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Tah is a open bluetooth low energy hardware platform" />
+  <meta name="keywords" content="tah, bluetooth, low energy, bluetooth low energy, hardware, open hardware, rhc, revealing hour creations" />
+  <link rel="shortcut icon" href="http://tah.io/favicon.ico" />
+
+  <noscript>
+    <link rel="stylesheet" href="/css/skel.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <link rel="stylesheet" href="/css/style-noscript.min.css" />
+  </noscript>
+
+  <script src="/js/application.js"></script>
+</head>
+<body class="index loading">
+ 
+  <!-- Header -->
+  <header id="header" class="reveal">
+    <h1 id="logo"><a href="http://tah.io"><img src="/images/tah_new.jpg" width="30px" id="tah_logo"/></a></h1>
+    <nav id="nav">
+      <ul>
+        <li><a href="http://tah.io">Home</a></li>
+        <li><a href="http://blog.tah.io">Blog</a></li>
+        <li class="current submenu">
+          <a href="/index.html">Docs</a>
+          <ul>
+            <li class="submenu">
+              <a href="/examples">Examples</a>
+              <ul>
+                <li><a href="/examples/badge">Badge</a></li>
+                <li><a href="/examples/dice">Dice</a></li>
+                <li><a href="/examples/motion-control">Motion Control</a></li>
+                <li><a href="/examples/rgb">RGB</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="http://discuss.tah.io" target="_blank">Discuss</a></li>
+        <li><a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank" class="button special">Pre-order now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ 
+  <!-- Main -->
+  <article class="docs">
+    <section class="wrapper custom_container">
+      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+      <center><h2>Creating badges with Tah</h2></center>
+
+      <p>[ Images of Final Tah BADGES]</p>
+
+      <p>Tah is a Bluetooth Low Energy Open Source Development platform compatible with Arduino.<br>
+      The Tah can be used for designing some intresting projects. Here I have build the Smart Electronics Badge using Tah.<br>
+      It would definitely attract peoples in various maker fair parties these Badges are all the time connected with your Smart Phone, and it will be used as a electronics Smart ID Card.<br>
+      You can show any thing that you want on the 1.8" Arduino TFT display and make your first wearable device.</p>
+
+      <p>Here it uses its key feature of onboard BLE and that will make your job very simple.</p>
+
+      <p>I hope you would love this small but intresting tutorial to help you make your own Smart Badge with Tah.</p>
+
+      <h3>Materials Required</h3>
+
+      <ul class="task-list">
+      <li>
+      <li>Tah board.</li>
+      <li>1.8" Arduino TFT display.</li>
+      <li>9V HW Battery.</li>
+      <li>General PCB Board.</li>
+      <li>Soldering Gun and Soldering Metal.</li>
+      <li>SD Card.</li>
+      <li>LM 7805 Voltage Regulator.</li>
+      <li>3D plastic casing for Tah Badge. </li>
+      <li>PC/Laptop with Arduino IDE 1.5.6 Installed.</li>
+      </ul><p>[Image of All the Materials]</p>
+
+      <div class="example_step">
+        <h3>Step : 1</h3>
+
+        <p>To Start with the Smart Tah Badge once we done required materials we will cut the general PCB as per your design and build the circuit of voltage regulator to power up the Tah and 1.8" TFT Screen. This Screen will be interface with Tah in SPI mode.</p>
+
+        <p>Complete the Tah Badge design as shown in pictures below.</p>
+
+        <p>[IMages of Soldering the Board for Badge]</p>
+      </div>
+
+      <div class="example_step">
+        <h3>Step : 2</h3>
+
+        <p>To interface with the TFT Touch Screen and Tah together in SPI mode.Follow the circuit Connection diagram of Tah and TFT Screen.</p>
+
+        <p>[Image of TFT Screen and Tah interfacing]</p>
+      </div>
+
+      <div class="example_step">
+        <h3>Step : 3</h3>
+
+        <p>Once we done with hardware connections and interfacing circuit with Arduino TFT Screen with Tah, now its time to get the required software libraries installed.</p>
+
+        <p>Download the Arduino IDE 1.1.6 to get working with Arduino TFT display from <a href="http://arduino.cc/en/Main/Software#toc2">here</a><br>
+        Note: There are issues with lower version and beta version of Arduino IDEs for TFT library so you need to download IDE version of 1.1.6 to get it working.</p>
+
+        <p>To Download the Arduino 1.8" TFT Screen library <a href="https://github.com/adafruit/Adafruit-ST7735-Library">here</a>.</p>
+      </div>
+
+      <div class="example_step">
+        <h3>Step : 4</h3>
+
+        <p>Once we done with all the hardware and software ready to start with, just download the demo code for Tah Badges from <a href="link%20of%20TAH%20Badge%20code">here</a>,Here we have build the demo to read the images from the SD Card and Display it on the Tah Badges.</p>
+
+        <p>The Images of the projects are shown below.</p>
+
+        <p>[Images of Tah badge]</p>
+      </div>
+
+      <div class="example_step">
+        <h3>Step : 5</h3>
+
+        <p>Here now we are ready to make the final assembly to fix this circuit in the 3D printed casing or in your own custom casing that you have design.</p>
+
+        <p>[Images of Final Assembly of Tah Badges]</p>
+      </div>
+
+      <h3>Watch the video</h3>
+      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+    </section>
+  </article>
+
+  <footer id="footer">
+    <ul class="icons">
+      <li><a href="http://twitter.com/tah_io" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="https://www.facebook.com/pages/Tah/633568926721880" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+      <li><a href="http://github.com/tah-io" class="icon circle fa-github"><span class="label">Github</span></a></li>
+    </ul>
+    <span class="copyright">&copy; Revealing Hour Creations. All rights reserved. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+  </footer>
+</body>
+</html>
+
