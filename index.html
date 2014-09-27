@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<!--
+  Twenty 1.0 by HTML5 UP
+  html5up.net | @n33co
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+  <title>Docs</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="http://tah.io/favicon.ico" />
+
+  <noscript>
+    <link rel="stylesheet" href="css/skel.min.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="css/style-noscript.min.css" />
+  </noscript>
+
+  <script src="js/application.js"></script>
+</head>
+<body class="index loading">
+ 
+  <!-- Header -->
+  <header id="header" class="reveal">
+    <h1 id="logo"><a href="/index.html"><img src="../images/tah_new.jpg" width="30px" id="tah_logo"/></a></h1>
+    <nav id="nav">
+      <ul>
+        <li><a href="http://tah.io">Home</a></li>
+        <li><a href="http://blog.tah.io">Blog</a></li>
+        <li class="current submenu">
+          <a href="/index.html">Docs</a>
+          <ul>
+            <li class="submenu">
+              <a href="/examples">Examples</a>
+              <ul>
+                <li><a href="/examples/dice">Dice</a></li>
+                <li><a href="/examples/motion-control">Motion Control</a></li>
+                <li><a href="/examples/rgb">RGB</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="http://discuss.tah.io" target="_blank">Discuss</a></li>
+        <li><a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank" class="button special">Pre-order now</a></li>
+      </ul>
+    </nav>
+  </header>
+ 
+  <!-- Main -->
+  <article class="docs">
+    <section class="wrapper custom_container">
+      <p>Welcome to the documentation for Tah. This page will consist of all the resources that you will need when using the Tah and more.</p>
+
+      <h2>iOS</h2>
+
+      <p>We have 2 apps on the iOS App Store as of 17th September, 2014.</p>
+
+      <ul class="task-list">
+        <li><a href="https://itunes.apple.com/us/app/tah/id909883039?mt=8">Tah</a></li>
+        <li><a href="https://itunes.apple.com/us/app/tah-sensor/id911694655?mt=8">Tah Sensor</a></li>
+      </ul><p>The above list will be updated as more apps are launched.  </p>
+
+      <p>You can find the source code for all of the above plus some other demo apps that we used at Maker Faires on our <a href="https://github.com/tah-io/iOS">GitHub repo</a>. Pull and feature requests are most <a href="https://github.com/tah-io/iOS/issues">welcome</a>.<br><br><strong>** Please note that software here is currently in beta and we expect there to be plenty of changes. **</strong></p>
+
+      <h2>Sketches</h2>
+
+      <p>Each app has Tah sketches that go with it.<br><br>
+      To upload a sketch to Tah, follow the steps given below :</p>
+
+      <h4>Install Arduino</h4>
+
+      <p>You can upload sketches to the Tah using the Arduino IDE. It is open source and can be used with <a href="http://arduino.cc/en/Guide/MacOSX">Mac</a>, <a href="http://playground.arduino.cc/Learning/Linux">Linux</a> and <a href="http://arduino.cc/en/Guide/Windows">Windows</a>. If you follow the instructions on the above links, you will have a green LED blinking on your Tah within minutes.<br><br>
+      For any troubleshooting, you can use our <a href="http://discuss.tah.io">forum</a>.</p>
+
+      <h4>Download sketches from GitHub</h4>
+
+      <ol class="task-list">
+        <li>You can download the latest source code for our Tah sketches from GitHub <a href="https://github.com/tah-io/sketches/archive/master.zip">here</a>. </li>
+        <li>Rename the downloaded archive from <em>sketches-master</em> to <em>Tah</em>.</li>
+      </ol><h4>Install Tah Library</h4>
+
+      <ol class="task-list">
+        <li>Do not unzip the downloaded library, leave it as is.
+        In the Arduino IDE, navigate to Sketch &gt; Import Library. At the top of the drop down list, select the option to "Add Library".<br>
+        </li>
+        <li>You will be prompted to select the library you would like to add. Navigate to the .zip file's location and open it.<br>
+        </li>
+        <li>Return to the Sketch &gt; Import Library menu. You should now see the library at the bottom of the drop-down menu. It is ready to be used in your sketch. </li>
+      </ol>
+
+      <p>For a more complete guide on installing a library, check out Arduino's <a href="http://arduino.cc/en/Guide/Libraries">guide</a>.</p>
+
+      <h4>Upload the default sketch</h4>
+
+      <ol class="task-list">
+        <li>Connect your Tah board to your USB port.</li>
+        <li>Select <em>File-&gt;Examples-&gt;Tah-&gt;ArdSCL</em></li>
+        <li>Compile and Upload the sketch</li>
+      </ol>
+
+      <h4>Check out the start page</h4>
+
+      <p>Follow the guidelines given on the <a href="http://tah.io/start">Getting Started</a> page for Tah to blink a LED using your smartphone.</p>
+
+      <p>You can check out the <a href="/examples">examples</a> page to know more about each sketch in detail.</p>
+    </section>
+  </article>
+
+  <footer id="footer">
+    <ul class="icons">
+      <li><a href="http://twitter.com/tah_io" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="https://www.facebook.com/pages/Tah/633568926721880" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+      <li><a href="http://github.com/tah-io" class="icon circle fa-github"><span class="label">Github</span></a></li>
+    </ul>
+    <span class="copyright">&copy; Revealing Hour Creations. All rights reserved. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+  </footer>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-36872186-2', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
