@@ -19,7 +19,7 @@
  
   <!-- Header -->
   <header id="header" class="reveal">
-    <h1 id="logo"><a href="http://tah.io"><img src="../images/tah_new.jpg" width="30px" id="tah_logo"/></a></h1>
+    <h1 id="logo"><a href="http://tah.io"><img src="/images/tah_new.jpg" width="30px" id="tah_logo"/></a></h1>
     <nav id="nav">
       <ul>
         <li><a href="http://tah.io">Home</a></li>
@@ -48,16 +48,55 @@
   <!-- Main -->
   <article class="docs">
     <section class="wrapper custom_container">
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
-      <p>This page documents the examples that are made available for the Tah.<br><br>
-      Currently we have the following demos, but keep on checking this page for updates as we add more examples.</p>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
+        <h3 class="lib_fn_heading">void begin(long baud)</h3>
 
-      <ul class="task-list">
-        <li><a href="rgb">RGB</a></li>
-        <li><a href="dice">Dice</a></li>
-        <li><a href="motion-control">Motion Control for PC/Mac</a></li>
-      </ul>
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+        <div class="function_heading">Description</div>
+
+        <p>Sets the data rate in bits per second (baud) for serial data transmission. For communicating with the computer, use one of these rates: 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, or 115200. You can, however, specify other rates - for example, to communicate over pins 0 and 1 with a component that requires a particular baud rate.
+        It will begins TAH ble serial port at specified baud rate.</p><br/>
+        
+        <div class="function_heading">Syntax</div>
+        <div class="example_code">
+          <pre>begin(long baud);</pre>
+        </div><br/>
+
+        <div class="function_heading">Parameters</div>
+        <div class="example_code">
+          <pre>baud: in bits per second (baud) - long</pre>
+        </div><br/>
+
+        <div class="function_heading">Returns</div>
+        <div class="example_code">
+          <pre>Nothing</pre>
+        </div><br/>
+
+        <div class="function_heading">Example</div>
+          <div class="example_code">
+            <pre>
+TAH myTAH;
+
+void setup()
+{ 
+  Serial.begin(9600);       //Tah Serial port
+  myTAH.begin(9600);        // Start TAH ble serial port
+  myTAH.enterCommandMode(); // Enters TAH command mode
+  myTAH.setName("TAH");
+  myTAH.setWorkRole(SLAVE);
+  myTAH.setAuth(OPEN);
+  myTAH.setiBeaconMode(ON);
+  myTAH.exitCommandMode(); // Saves changed settings and exit command mode
+}
+
+        Serial.println("Hi Tah");
+}
+void loop()
+{
+}
+            </pre>
+          </div>
+        </div>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
     </section>
   </article>
 

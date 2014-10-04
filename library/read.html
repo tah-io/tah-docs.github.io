@@ -48,16 +48,62 @@
   <!-- Main -->
   <article class="docs">
     <section class="wrapper custom_container">
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
-      <p>This page documents the examples that are made available for the Tah.<br><br>
-      Currently we have the following demos, but keep on checking this page for updates as we add more examples.</p>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
+        <h3 class="lib_fn_heading">int read();</h3>
 
-      <ul class="task-list">
-        <li><a href="rgb">RGB</a></li>
-        <li><a href="dice">Dice</a></li>
-        <li><a href="motion-control">Motion Control for PC/Mac</a></li>
-      </ul>
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+        <div class="function_heading">Description</div>
+
+        <p>Reads incoming serial data. read() inherits from the Stream utility class.</p><br/>
+        
+        <div class="function_heading">Syntax</div>
+        <div class="example_code">
+          <pre>TAH.read();</pre>
+        </div><br/>
+        
+
+        <div class="function_heading">Parameters</div>
+        <div class="example_code">
+          <pre>None</pre>
+        </div><br/>
+
+        <div class="function_heading">Returns</div>
+        <div class="example_code">
+          <pre>int - The first byte of incoming serial data available on Tah BLE Rx Pin (or -1 if no data is available)</pre>
+        </div><br/>
+
+        <div class="function_heading">Example</div>
+          <div class="example_code">
+            <pre>
+TAH myTAH;
+int incomingByte =0;
+
+void setup()
+{
+  // initialize serial:
+
+  Serial.begin(9600);
+  myTAH.begin(9600);            //Tah BLE serial port 
+  myTAH.enterCommandMode();     // Enters TAH command mode
+  myTAH.setName("TAH");
+  myTAH.setWorkRole(SLAVE);
+  myTAH.setAuth(OPEN);
+  myTAH.setiBeaconMode(ON);
+  myTAH.exitCommandMode();      // Saves changed settings and exit command mode
+}
+
+void loop()
+{
+  if(myTAH.available() >0)      //Check if data is available on Tah BLE RX pin
+  {
+    incomingByte = myTAH.read();
+    Serial.print("Received Data:");
+    Serial.println(incomingByte);   //print data on Tah serial terminal
+  }
+}
+            </pre>
+          </div>
+        </div>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
     </section>
   </article>
 

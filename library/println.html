@@ -48,16 +48,74 @@
   <!-- Main -->
   <article class="docs">
     <section class="wrapper custom_container">
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
-      <p>This page documents the examples that are made available for the Tah.<br><br>
-      Currently we have the following demos, but keep on checking this page for updates as we add more examples.</p>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
+        <h3 class="lib_fn_heading">println()</h3>
 
-      <ul class="task-list">
-        <li><a href="rgb">RGB</a></li>
-        <li><a href="dice">Dice</a></li>
-        <li><a href="motion-control">Motion Control for PC/Mac</a></li>
-      </ul>
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+        <div class="function_heading">Description</div>
+
+        <p>Prints data to the serial port as human-readable ASCII text followed by a carriage return character (ASCII 13, or '\r') and a newline character (ASCII 10, or '\n'). This command takes the same forms as Serial.print() in Tah and myTAH.print().</p><br/>
+        
+        <div class="function_heading">Syntax</div>
+        <div class="example_code">   
+          <pre>
+myTAH.println(val)
+myTAH.println(val, format)</pre>
+        </div><br/>        
+
+        <div class="function_heading">Parameters</div>
+        <div class="example_code">
+          <pre>
+val: the value to print - any data type
+format: specifies the number base (for integral data types) or number of decimal places (for floating point types)</pre>
+        </div><br/>
+
+        <div class="function_heading">Returns</div>
+        <div class="example_code">
+          <pre>size_t (long): println() returns the number of bytes written, though reading that number is optional</pre>
+        </div><br/>
+
+        <div class="function_heading">Example</div>
+          <div class="example_code">
+            <pre>
+/*
+  Analog input
+  reads an analog input on analog in 0, prints the value out.
+*/
+
+TAH myTAH;
+int analogValue = 0;    // variable to hold the analog value
+
+void setup()
+ {
+  // open the serial port at 9600 bps:
+  Serial.begin(9600);
+  myTAH.Serial(9600);         //Open the Tah Serial port at 9600 bps
+  myTAH.enterCommandMode();   // Enters TAH command mode
+  myTAH.setName("TAH");
+  myTAH.setWorkRole(SLAVE);
+  myTAH.setAuth(OPEN);
+} 
+
+void loop()
+{
+  // read the analog input on pin 0:
+  analogValue = analogRead(0);
+
+  // print it out in many formats to Tah BLE port:
+
+  myTAH.println(analogValue);       // print as an ASCII-encoded decimal
+  myTAH.println(analogValue, DEC);  // print as an ASCII-encoded decimal
+  myTAH.println(analogValue, HEX);  // print as an ASCII-encoded hexadecimal
+  myTAH.println(analogValue, OCT);  // print as an ASCII-encoded octal
+  myTAH.println(analogValue, BIN);  // print as an ASCII-encoded binary
+
+  // delay 10 milliseconds before the next reading:
+  delay(10);
+}
+            </pre>
+          </div>
+        </div>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
     </section>
   </article>
 

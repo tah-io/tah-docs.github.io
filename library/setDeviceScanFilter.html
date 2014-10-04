@@ -48,16 +48,58 @@
   <!-- Main -->
   <article class="docs">
     <section class="wrapper custom_container">
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
-      <p>This page documents the examples that are made available for the Tah.<br><br>
-      Currently we have the following demos, but keep on checking this page for updates as we add more examples.</p>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
+        <h3 class="lib_fn_heading">void setDeviceScanFilter(int filter)</h3>
 
-      <ul class="task-list">
-        <li><a href="rgb">RGB</a></li>
-        <li><a href="dice">Dice</a></li>
-        <li><a href="motion-control">Motion Control for PC/Mac</a></li>
-      </ul>
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+        <div class="function_heading">Description</div>
+
+        <p>This utility will filter out the BLE devices. It finds all BLE modules or only find Tah BLE modules. This will helps to connect to specific category of bluetooth modules.</p><br/>
+        
+        <div class="function_heading">Syntax</div>
+        <div class="example_code">   
+          <pre>setDeviceScanFilter(filter);</pre>
+        </div><br/>        
+
+        <div class="function_heading">Parameters</div>
+        <div class="example_code">
+          <pre>
+filter: pass the int-parameter as
+  0: Will find all BLE modules
+  1: Only find HM Modules
+  Default :1</pre>
+        </div><br/>
+
+        <div class="function_heading">Returns</div>
+        <div class="example_code">
+          <pre>Nothing</pre>
+        </div><br/>
+
+        <div class="function_heading">Example</div>
+          <div class="example_code">
+            <pre>
+TAH myTAH;
+
+void setup()
+{ 
+  Serial.begin(9600);       //Tah Serial port
+  myTAH.begin(9600);        // Start TAH ble serial port
+  myTAH.enterCommandMode(); // Enters TAH command mode
+  myTAH.setName("TAH");
+  myTAH.setWorkRole(SLAVE);
+  myTAH.setAuth(OPEN);
+  myTAH.setiBeaconMode(ON);
+  myTAH.exitCommandMode(); // Saves changed settings and exit command mode
+}
+
+        Serial.println("Hi Tah");
+}
+void loop()
+{
+}
+            </pre>
+          </div>
+        </div>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
     </section>
   </article>
 

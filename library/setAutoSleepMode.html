@@ -48,16 +48,34 @@
   <!-- Main -->
   <article class="docs">
     <section class="wrapper custom_container">
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
-      <p>This page documents the examples that are made available for the Tah.<br><br>
-      Currently we have the following demos, but keep on checking this page for updates as we add more examples.</p>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
+        <h3 class="lib_fn_heading">setAutoSleepMode( )</h3>
 
-      <ul class="task-list">
-        <li><a href="rgb">RGB</a></li>
-        <li><a href="dice">Dice</a></li>
-        <li><a href="motion-control">Motion Control for PC/Mac</a></li>
-      </ul>
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+        <div class="function_heading">Description</div>
+
+        <p>When their is no data transmition between BLE modules the BLE will put into auto sleep mode to run on power consumption. This function sets the BLE in auto sleep mode when no data transfer. In deep sleep mode Tah BLE consumes upto 6mA of current.</p><br/>
+
+        
+        <div class="function_heading">Syntax</div>
+        <div class="example_code">   
+          <pre>setAutoSleepMode();</pre>
+        </div><br/>
+        
+
+        <div class="function_heading">Parameters</div>
+        <div class="example_code">
+          <pre>
+mode: pass the int argument to set the auto sleep mode.
+0:Auto sleep
+1:Don't auto sleep
+Default: 1</pre>
+        </div><br/>
+
+        <div class="function_heading">Returns</div>
+        <div class="example_code">
+          <pre>Nothing</pre>
+        </div><br/>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
     </section>
   </article>
 

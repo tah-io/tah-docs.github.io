@@ -35,6 +35,13 @@
 	  position: absolute;
 	}
 
+	.lib_fn_heading {
+		font-size: 1.15em;
+		letter-spacing: 0.025em;
+		text-transform: none;
+		text-align: center;
+	}
+
 	.app_screenshot {
 		margin: 0% 3% 0% 3%;
 	}
@@ -43,6 +50,17 @@
 		width: 11.5em;
 	}
 
+	.function_heading {
+		color: #83d3c9;
+		font-weight: bolder;
+	}
+
+	.example_code {
+		background-color: #F7F5F5;
+		padding: 2% 0% 0% 4%;
+		word-wrap:break-word;
+		padding-bottom: 2%
+	}
 
 	.pre-order-bg {
 		background-color: #83d3c9 !important;
@@ -53,11 +71,31 @@
 		font-size: 75%;
 	}
 
-	.custom_container {
-		width: 70%;
-		margin-left: auto;
-		margin-right: auto;
-		padding: 5% !important;
+	@media (max-width: 1500px) {
+		.custom_container {
+			width: 70%;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 5% !important;
+		}
+
+		#tah_mid_logo {
+			display: none;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.custom_container {
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 5% !important;
+		}
+
+		#tah_mid_logo{
+			display: block !important;
+			margin-top: -10%;
+		}
 	}
 
 	.apple_badge {

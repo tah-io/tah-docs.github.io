@@ -19,7 +19,7 @@
  
   <!-- Header -->
   <header id="header" class="reveal">
-    <h1 id="logo"><a href="http://tah.io"><img src="../images/tah_new.jpg" width="30px" id="tah_logo"/></a></h1>
+    <h1 id="logo"><a href="http://tah.io"><img src="/images/tah_new.jpg" width="30px" id="tah_logo"/></a></h1>
     <nav id="nav">
       <ul>
         <li><a href="http://tah.io">Home</a></li>
@@ -48,16 +48,30 @@
   <!-- Main -->
   <article class="docs">
     <section class="wrapper custom_container">
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
-      <p>This page documents the examples that are made available for the Tah.<br><br>
-      Currently we have the following demos, but keep on checking this page for updates as we add more examples.</p>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
+        <h3 class="lib_fn_heading">bool available()</h3>
 
-      <ul class="task-list">
-        <li><a href="rgb">RGB</a></li>
-        <li><a href="dice">Dice</a></li>
-        <li><a href="motion-control">Motion Control for PC/Mac</a></li>
-      </ul>
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+        <div class="function_heading">Description</div>
+
+        <p>Checks to see if there is a data received on the Rx pin of Tah BLE.</p><br/>
+        
+        <div class="function_heading">Syntax</div>
+        <div class="example_code">
+          <pre>TAH.avaliable();</pre>
+        </div><br/>
+
+        <div class="function_heading">Parameters</div>
+        <div class="example_code">
+          <pre>None</pre>
+        </div><br/>
+
+        <div class="function_heading">Returns</div>
+        <div class="example_code">
+          <pre>
+Returns 1 if anything available on BLE RX Pin.
+Returns 0 if nothing is available on BLE RX Pin.</pre>
+        </div><br/>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
     </section>
   </article>
 

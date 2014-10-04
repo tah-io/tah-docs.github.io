@@ -48,16 +48,57 @@
   <!-- Main -->
   <article class="docs">
     <section class="wrapper custom_container">
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
-      <p>This page documents the examples that are made available for the Tah.<br><br>
-      Currently we have the following demos, but keep on checking this page for updates as we add more examples.</p>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
+        <h3 class="lib_fn_heading">virtual size_t write(uint8_t byte)</h3>
 
-      <ul class="task-list">
-        <li><a href="rgb">RGB</a></li>
-        <li><a href="dice">Dice</a></li>
-        <li><a href="motion-control">Motion Control for PC/Mac</a></li>
-      </ul>
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+        <div class="function_heading">Description</div>
+
+        <p>Writes binary data to the Tah BLE serial port. This data is sent as a byte or series of bytes; to send the characters representing the digits of a number use the print() function instead.</p><br/>
+        
+        <div class="function_heading">Syntax</div>
+        <div class="example_code">
+          <pre>
+myTAH.write(val);
+myTAH.write(str); 
+myTAH.write(buf, len);</pre>
+        </div><br/>
+
+        <div class="function_heading">Parameters</div>
+        <div class="example_code">
+          <pre>
+val: a value to send as a single byte
+str: a string to send as a series of bytes
+buf: an array to send as a series of bytes
+len: the length of the buffer</pre>
+        </div><br/>
+
+        <div class="function_heading">Returns</div>
+        <div class="example_code">
+          <pre>byte - write() will return the number of bytes written, though reading that number is optional.</pre>
+        </div><br/>
+
+        <div class="function_heading">Example</div>
+          <div class="example_code">
+            <pre>
+TAH myTAH;
+  void setup()
+  {
+    Serial.begin(9600);
+    myTAH.begin(9600);            //Tah BLE serial port 
+    myTAH.enterCommandMode();     // Enters TAH command mode
+    myTAH.setName("TAH");
+    myTAH.setWorkRole(SLAVE);
+    myTAH.setAuth(OPEN);
+  }   
+  
+  void loop()
+  {  
+    myTAH.write(45);                        // send a byte with the value 45
+    int bytesSent = myTAH.write(“hello”);   //send the string “hello” and return the length of the string.
+  }            </pre>
+          </div>
+        </div>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
     </section>
   </article>
 

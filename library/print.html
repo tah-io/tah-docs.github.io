@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Examples</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Tah is a open bluetooth low energy hardware platform" />
+  <meta name="keywords" content="tah, bluetooth, low energy, bluetooth low energy, hardware, open hardware, rhc, revealing hour creations" />
+  <link rel="shortcut icon" href="http://tah.io/favicon.ico" />
+
+  <noscript>
+    <link rel="stylesheet" href="/css/skel.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <link rel="stylesheet" href="/css/style-noscript.min.css" />
+  </noscript>
+
+  <script src="/js/application.js"></script>
+</head>
+<body class="index loading">
+ 
+  <!-- Header -->
+  <header id="header" class="reveal">
+    <h1 id="logo"><a href="http://tah.io"><img src="../images/tah_new.jpg" width="30px" id="tah_logo"/></a></h1>
+    <nav id="nav">
+      <ul>
+        <li><a href="http://tah.io">Home</a></li>
+        <li><a href="http://blog.tah.io">Blog</a></li>
+        <li class="current submenu">
+          <a href="/index.html">Docs</a>
+          <ul>
+            <li class="submenu">
+              <a href="/examples">Examples</a>
+              <ul>
+                <li><a href="/examples/dice">Dice</a></li>
+                <li><a href="/examples/motion-control">Motion Control</a></li>
+                <li><a href="/examples/rgb">RGB</a></li>
+              </ul>
+              <li><a href="/library">Library</a></li>
+            </li>
+          </ul>
+        </li>
+        <li><a href="http://discuss.tah.io" target="_blank">Discuss</a></li>
+        <li><a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank" class="button special">Pre-order now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ 
+  <!-- Main -->
+  <article class="docs">
+    <section class="wrapper custom_container">
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
+        <h3 class="lib_fn_heading">begin( )</h3>
+
+        <div class="function_heading">Description</div>
+
+        <div class="example_code">
+          <pre>
+Prints data to the Tah BLE serial port as human-readable ASCII text. This command can take many forms. Numbers are printed using an ASCII character for each digit. Floats are similarly printed as ASCII digits, defaulting to two decimal places. Bytes are sent as a single character. Characters and strings are sent as is. For example:
+
+  TAH.print(50) gives "50"
+  TAH.print(1.23456) gives "1.23"
+  TAH.print('N') gives "N"
+  TAH.print("Hello world.") gives "Hello world." 
+
+An optional second parameter specifies the base (format) to use; permitted values are BIN (binary, or base 2), OCT (octal, or base 8), DEC (decimal, or base 10), HEX (hexadecimal, or base 16). For floating point numbers, this parameter specifies the number of decimal places to use. For example:
+
+  TAH.print(50, BIN) gives "110010"
+  TAH.print(50, OCT) gives "62"
+  TAH.print(50, DEC) gives "50"
+  TAH.print(50, HEX) gives "32"
+          </pre>
+        </div>
+        
+        <div class="function_heading">Syntax</div>
+        <div class="example_code">
+          <pre>
+TAH.print(val)
+TAH.print(val, format)</pre>
+        </div><br/>        
+
+        <div class="function_heading">Parameters</div>
+        <div class="example_code">
+          <pre>
+val: the value to print - any data type
+format: specifies the number base (for integral data types) or number of decimal places (for floating point types)</pre>
+        </div><br/>
+
+        <div class="function_heading">Returns</div>
+        <div class="example_code">
+          <pre>size_t (long): print() returns the number of bytes written, though reading that number is optional</pre>
+        </div><br/>
+
+        <div class="function_heading">Example</div>
+          <div class="example_code">
+            <pre>
+TAH myTAH;
+int x = 0;
+
+void setup() 
+{
+    
+  Serial.begin(9600);         // open the serial port at 9600 bps:    
+  myTAH.Serial(9600);         // Open the Tah Serial port at 9600 bps
+  myTAH.enterCommandMode();   // Enters TAH command mode
+  myTAH.setName("TAH");
+  myTAH.setWorkRole(SLAVE);
+  myTAH.setAuth(OPEN);
+}       
+
+
+void loop() 
+{  
+  // print labels
+  Serial.print("NO FORMAT");       // prints a label
+  Serial.print("\t");              // prints a tab
+
+  Serial.print("DEC");  
+  Serial.print("\t");      
+
+  Serial.print("HEX");
+  Serial.print("\t");  
+
+  Serial.print("OCT");
+  Serial.print("\t");
+
+  Serial.print("BIN");
+  Serial.print("\t");
+
+  for(x=0; x< 64; x++)
+{
+    // only part of the ASCII chart, change to suit
+
+    // print it out in many formats:
+    Serial.print(x);       // print as an ASCII-encoded decimal - same as "DEC"
+    myTAH.print(x);    // Print on Tah BLE in ASCII-encoded decimal- same as "DEC"  
+    Serial.print("\t");    // prints a tab
+
+    Serial.print(x, DEC);  // print as an ASCII-encoded decimal
+    myTAH.print(x,DEC);
+    Serial.print("\t");    // prints a tab
+
+    Serial.print(x, HEX);  // print as an ASCII-encoded hexadecimal
+     myTAH.print(x,HEX);
+    Serial.print("\t");    // prints a tab
+
+    Serial.print(x, OCT);  // print as an ASCII-encoded octal
+     myTAH.print(x,OCT);
+    Serial.print("\t");    // prints a tab
+
+    Serial.println(x, BIN);  // print as an ASCII-encoded binary
+     myTAH.println(x,BIN);
+                            // then adds the carriage return with "println"
+    delay(200);            // delay 200 milliseconds
+  }
+  Serial.println("");      // prints another carriage return
+  
+}
+            </pre>
+          </div>
+        </div>
+      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
+    </section>
+  </article>
+
+  <footer id="footer">
+    <ul class="icons">
+      <li><a href="http://twitter.com/tah_io" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="https://www.facebook.com/pages/Tah/633568926721880" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+      <li><a href="http://github.com/tah-io" class="icon circle fa-github"><span class="label">Github</span></a></li>
+    </ul>
+    <span class="copyright">&copy; <a href="http://revealinghour.in">Revealing Hour Creations.</a> All rights reserved. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+  </footer>
+</body>
+</html>
