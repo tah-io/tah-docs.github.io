@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Tah & Linux</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Tah is a open bluetooth low energy hardware platform" />
+  <meta name="keywords" content="tah, bluetooth, low energy, bluetooth low energy, hardware, open hardware, rhc, revealing hour creations" />
+  <link rel="shortcut icon" href="http://tah.io/favicon.ico" />
+
+  <noscript>
+    <link rel="stylesheet" href="/css/skel.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <link rel="stylesheet" href="/css/style-noscript.min.css" />
+  </noscript>
+
+  <script src="/js/application.js"></script>
+</head>
+<body class="index loading">
+ 
+  <!-- Header -->
+  <header id="header" class="reveal">
+    <h1 id="logo"><a href="http://tah.io"><img src="/images/tah_new.jpg" width="30px" id="tah_logo"/></a></h1>
+    <nav id="nav">
+      <ul>
+        <li><a href="http://tah.io">Home</a></li>
+        <li><a href="http://blog.tah.io">Blog</a></li>
+        <li class="current submenu">
+          <a href="/index.html">Docs</a>
+          <ul>
+            <li class="submenu">
+              <a href="/examples">Examples</a>
+              <ul>
+                <li><a href="/examples/dice">Electronic Die</a></li>
+                <li><a href="/examples/gaming-control">Gaming Control</a></li>
+                <li><a href="/examples/motion-control">Motion Control</a></li>
+                <li><a href="/examples/relay">Relay Sheild</a></li>
+                <li><a href="/examples/rgb">RGB Mood Lamp</a></li>
+                <li><a href="/examples/linux">Tah & Linux</a></li>
+                <li><a href="/examples/sensors">Tah & Sensors</a></li>
+              </ul>
+              <li><a href="/library">Library</a></li>
+            </li>
+          </ul>
+        </li>
+        <li><a href="http://discuss.tah.io" target="_blank">Discuss</a></li>
+        <li><a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank" class="button special">Pre-order now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ 
+  <!-- Main -->
+  <article class="docs">
+    <center><img src="/images/tah_new.jpg" width="80px" id="tah_mid_logo"/></center>
+    <section class="wrapper custom_container">
+      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+      <center><h2>Tah with Linux</h2></center>
+
+      <p>Tah is a Bluetooth Low Energy open source development platform compatible with the Arduino. In this tutorial we are going to take a look at how to control Tah from a Linux machine.</p>
+
+      <h3>Requirements</h3>
+
+      <ul class="task-list">
+        <li>Tah</li>
+        <li><a href="http://www.adafruit.com/products/1327">CSR 4.0 dongle</a></li>
+        <li>Linux machine (Raspberry Pi, BeagleBone Black, Laptop, PC)</li>
+      </ul>
+
+      <div class="example_step">
+        <h3>STEP 1</h3>
+
+        <p><a href="https://lwn.net/Articles/531133/">BlueZ</a> provides the official support for Bluetooth in Linux. We will be using
+        <a href="http://www.bluez.org/">version 5.0</a> or above, since that added the support for BLE. We need a kernel above 3.5 for this to work.</p>
+
+        <div class="example_code">
+          <pre>
+uname -a
+  Linux beaglebone 3.8.13-bone41 #1 SMP Tue Mar 4 22:51:47 UTC 2014 armv7l GNU/Linux</pre>
+        </div><br/>
+
+        Make sure that the USB module is connected and has been detected</p>
+
+        <div class="example_code">
+<pre>lsusb
+  Bus 001 Device 002: ID 0a12:0001 Cambridge Silicon Radio, Ltd Bluetooth Dongle (HCI mode)
+  Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+  Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</pre>
+        </div><br/>
+        
+        Next install bluez</p>
+        <div class="example_code">
+          <pre>apt-get install bluez</pre>
+        </div><br/>
+
+        Verify that it has been installed with hciconfig.
+        Next scan for Bluetooth devices</p>
+
+        <div class="example_code">
+<pre>hcitool scan
+  Scanning ...
+  B8:E8:56:35:38:DF Anuj’s MacBook Pro</pre>
+        </div><br/>
+
+        This will return all Bluetooth 3.0 devices. This doesn't include any Bluetooth 4.0 (BLE)devices</p>
+      </div>
+
+      <div class="example_step">
+        <h3>STEP 2</h3>
+        <p>Now scan for Bluetooth 4.0 devices</p>
+        
+        <div class="example_code">
+<pre>hcitool lescan
+  LE Scan ...
+  7C:66:9D:9B:2D:DA (unknown)
+  7C:66:9D:9B:2D:DA DHIRAJ
+  7C:66:9D:9B:2D:DA (unknown)
+  7C:66:9D:9B:2D:DA DHIRAJ
+  7C:66:9D:9B:2D:DA (unknown)</pre>
+        </div>
+      </div>
+
+      <div class="example_step">
+        <h3>STEP 3</h3>
+
+        Now, to connect to a BLE device using <a href="https://developer.bluetooth.org/gatt/Pages/GATT-Specification-Documents.aspx">GATT</a> profiles
+
+        <div class="example_code">
+          <pre>sudo gatttool -b xx:xx:xx:xx:xx:xx -I</pre>
+        </div><br/>
+
+        <p>You will see an interactive prompt. Type connect like below</p>
+
+        <div class="example_code">
+          <pre>[xx:xx:xx:xx:xx:xx][LE]> connect</pre>
+        </div><br/>
+
+        <p>On Successful connection with Tah, the onboard blue led will stop blinking and stay lit.</p><br/>
+      </div>
+
+      <div class="example_step">
+        <h3>STEP 4</h3>
+
+        <p>To communicate with Tah, we need the characterstics handle for TX and RX.</p>
+
+        <p>In the case of Tah BLE module the characterstics handle address is <strong>0x0012</strong> for both RX and TX.</p><br/>
+
+        <h4>Transmit</h4>
+
+        <p>Here we are going to control the onboard LED of Tah when their is data received by Tah from the characterstic handle <strong>0x0012</strong>. To see the data is received by Tah.
+        Upload <a href="https://github.com/tah-io/Tah_Arduino_Library/tree/master/examples/TahWithLinux">Tah_Arduino sketch</a> to Tah which will display it on the serial monitor and simultaneously <strong>pin13</strong> led will blink for 1 sec and goes low.</p>
+
+        <p>Now type below to turn the LED ON</p>
+
+        <div class="example_code">
+          <pre> [xx:xx:xx:xx:xx:xx][LE]>char-write-cmd 0x0012 010100</pre>
+        </div><br/>
+
+        <h4>Receive</h4>
+
+        <p> The 0x0012 is the handle of the Client Characteristic Configuration (CCC) uuid ffe1. You can find this 0x0012 handle by typing char-read-uuid ffe1 in the gatttool interactive prompt.</p>
+
+        <div class="example_code">
+<pre>[xx:xx:xx:xx:xx:xx][LE]>char-write-cmd 0x0012 A00100
+[xx:xx:xx:xx:xx:xx][LE]>char-write-req 0x0012 0100 –listen</pre>
+        </div><br/>
+
+        <p>Similarly when the data is transfer from Tah BLE using arduino serial monitor the notification will be received at address RX handle 0x0012. you will see incoming RX value on RX handle (0x0012).</p><br/>
+
+      </div>
+      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+    </section>
+  </article>
+
+  <footer id="footer">
+    <ul class="icons">
+      <li><a href="http://twitter.com/tah_io" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="https://www.facebook.com/pages/Tah/633568926721880" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+      <li><a href="http://github.com/tah-io" class="icon circle fa-github"><span class="label">Github</span></a></li>
+    </ul>
+    <span class="copyright">&copy; <a href="http://revealinghour.in">Revealing Hour Creations.</a> All rights reserved. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+  </footer>
+</body>
+</html>

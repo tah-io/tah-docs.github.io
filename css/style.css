@@ -82,11 +82,16 @@
 		#tah_mid_logo {
 			display: none;
 		}
+
+		.mid-libfns {
+			border-left: 1px solid lightgray;
+			border-right: 1px solid lightgray;
+		}
 	}
 
 	@media (max-width: 640px) {
 		.custom_container {
-			width: 90%;
+			width: 99%;
 			margin-left: auto;
 			margin-right: auto;
 			padding: 5% !important;
@@ -95,6 +100,11 @@
 		#tah_mid_logo{
 			display: block !important;
 			margin-top: -10%;
+		}
+
+		.mid-libfns {
+			border-left: none;
+			border-right: none;
 		}
 	}
 
