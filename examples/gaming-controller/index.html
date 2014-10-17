@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Library</title>
+  <title>Gaming Controller</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="Tah is a open bluetooth low energy hardware platform" />
   <meta name="keywords" content="tah, bluetooth, low energy, bluetooth low energy, hardware, open hardware, rhc, revealing hour creations" />
@@ -36,8 +36,7 @@
                 <li><a href="/examples/relay">Relay Sheild</a></li>
                 <li><a href="/examples/rgb">RGB Mood Lamp</a></li>
                 <li><a href="/examples/linux">Tah & Linux</a></li>
-                <li><a href="/examples/sensors">Tah & Sensors</a></li>
-              </ul>
+                <li><a href="/examples/sensors">Tah & Sensors</a></li></ul>
               <li><a href="/library">Library</a></li>
             </li>
           </ul>
@@ -53,31 +52,51 @@
   <article class="docs">
     <center><img src="/images/tah_new.jpg" width="80px" id="tah_mid_logo"/></center>
     <section class="wrapper custom_container">
-      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
-        <h3 class="lib_fn_heading">int parseInt()</h3>
+      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+      <center><h2>Tah as a gaming controller</h2></center>      
 
-        <div class="function_heading">Description</div>
+      <p>Tah is a Bluetooth Low Energy Open Source Development platform compatible with Arduino. You can use your smartphone to play games on your Mac or your PC.</p>
 
-        <p>Looks for the next valid integer in the incoming serial stream. parseInt() inherits from the Stream utility class. If no valid integer is found within one second (adjustable through Serial.setTimeout() ) a default value of 0 will be returned.</p><br/>
-        
-        <div class="function_heading">Syntax</div>
-        <div class="example_code">
-          <pre>myTAH.parseInt();</pre>
-        </div><br/>
+      <h3>Requirements</h3>
 
-        <div class="function_heading">Parameters</div>
-        <div class="example_code">
-          <pre>
-stream : an instance of a class that inherits from Stream.
-list : the stream to check for ints (char)</pre>
-        </div><br/>
+      <ul class="task-list">
+        <li>Tah</li>
+        <li>Arduino IDE installed</li>
+        <li>iPhone 4S or newer with the <a href="https://github.com/tah-io/iOS/tree/master/TAH%20Motion%20Control">Motion Controller App</a> installed</li>
+      </ul>
 
-        <div class="function_heading">Returns</div>
-        <div class="example_code">
-          <pre>int : the next valid integer</pre>
-        </div><br/>
+      <div class="example_step">
+        <h3>Step 1</h3>
 
-      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
+        <p>To get started with this demo <a href="https://github.com/tah-io/Tah_Arduino_Library">download</a> the Tah Arduino Library and  install it into your existing Arduino IDE.</p>
+
+        <p><a href="https://itunes.apple.com/in/app/leps-world/id486717857">Download</a> the game Lep's World from the Appstore.</p>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 2</h3>
+
+        <p><a href="https://github.com/tah-io/Tah_Arduino_Library/tree/master/examples/MotionControl">Download</a> and burn the motion control sketch onto the Tah.</p>
+
+      </div>
+
+      <div class="example_step">
+        <h3>Step 3</h3>
+
+        <ul class="task-list">
+          <li>Open the Tah Motion Control app on your iPhone</li>
+          <li>Press 'Scan' to scan for Bluetooth Devices</li>
+          <li>Connect to the device named 'Tah Motion Control'</li>
+          <li>Load the game and start playing</li>
+        </ul>
+
+        <center>
+          <img src="/images/gaming_joystick.jpg" style="width:350px">
+        </center>
+
+      </div>
+  
+      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
     </section>
   </article>
 

@@ -31,7 +31,7 @@
               <a href="/examples">Examples</a>
               <ul>
                 <li><a href="/examples/dice">Electronic Die</a></li>
-                <li><a href="/examples/gaming-control">Gaming Control</a></li>
+                <li><a href="/examples/gaming-controller">Gaming Controller</a></li>
                 <li><a href="/examples/motion-control">Motion Control</a></li>
                 <li><a href="/examples/relay">Relay Sheild</a></li>
                 <li><a href="/examples/rgb">RGB Mood Lamp</a></li>
@@ -54,7 +54,7 @@
     <center><img src="/images/tah_new.jpg" width="80px" id="tah_mid_logo"/></center>
     <section class="wrapper custom_container">
       <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
-        <h3 class="lib_fn_heading">begin( )</h3>
+        <h3 class="lib_fn_heading">print()</h3>
 
         <div class="function_heading">Description</div>
 
@@ -62,25 +62,25 @@
           <pre>
 Prints data to the Tah BLE serial port as human-readable ASCII text. This command can take many forms. Numbers are printed using an ASCII character for each digit. Floats are similarly printed as ASCII digits, defaulting to two decimal places. Bytes are sent as a single character. Characters and strings are sent as is. For example:
 
-  TAH.print(50) gives "50"
-  TAH.print(1.23456) gives "1.23"
-  TAH.print('N') gives "N"
-  TAH.print("Hello world.") gives "Hello world." 
+  myTAH.print(50) gives "50"
+  myTAH.print(1.23456) gives "1.23"
+  myTAH.print('N') gives "N"
+  myTAH.print("Hello world.") gives "Hello world." 
 
 An optional second parameter specifies the base (format) to use; permitted values are BIN (binary, or base 2), OCT (octal, or base 8), DEC (decimal, or base 10), HEX (hexadecimal, or base 16). For floating point numbers, this parameter specifies the number of decimal places to use. For example:
 
-  TAH.print(50, BIN) gives "110010"
-  TAH.print(50, OCT) gives "62"
-  TAH.print(50, DEC) gives "50"
-  TAH.print(50, HEX) gives "32"
+  myTAH.print(50, BIN) gives "110010"
+  myTAH.print(50, OCT) gives "62"
+  myTAH.print(50, DEC) gives "50"
+  myTAH.print(50, HEX) gives "32"
           </pre>
         </div>
         
         <div class="function_heading">Syntax</div>
         <div class="example_code">
           <pre>
-TAH.print(val)
-TAH.print(val, format)</pre>
+myTAH.print(val)
+myTAH.print(val, format)</pre>
         </div><br/>        
 
         <div class="function_heading">Parameters</div>
