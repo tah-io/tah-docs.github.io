@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Tah to Tah Communication</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Tah is a open bluetooth low energy hardware platform" />
+  <meta name="keywords" content="tah, bluetooth, low energy, bluetooth low energy, hardware, open hardware, rhc, revealing hour creations" />
+  <link rel="shortcut icon" href="http://tah.io/favicon.ico" />
+
+  <noscript>
+    <link rel="stylesheet" href="/css/skel.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <link rel="stylesheet" href="/css/style-noscript.min.css" />
+  </noscript>
+
+  <script src="/js/application.js"></script>
+</head>
+<body class="index loading">
+ 
+  <!-- Header -->
+  <header id="header" class="reveal">
+    <h1 id="logo"><a href="http://tah.io"><img src="/images/tah_new.jpg" width="30px" id="tah_logo"/></a></h1>
+    <nav id="nav">
+      <ul>
+        <li><a href="http://tah.io">Home</a></li>
+        <li><a href="http://blog.tah.io">Blog</a></li>
+        <li class="current submenu">
+          <a href="/index.html">Docs</a>
+          <ul>
+            <li class="submenu">
+              <a href="/examples">Examples</a>
+              <ul>
+                <li><a href="/examples/dice">Electronic Die</a></li>
+                <li><a href="/examples/gaming-controller">Gaming Controller</a></li>
+                <li><a href="/examples/motion-control">Motion Control</a></li>
+                <li><a href="/examples/relay">Relay Sheild</a></li>
+                <li><a href="/examples/rgb">RGB Mood Lamp</a></li>
+                <li><a href="/examples/tah-remote">Tah Remote</a></li>
+                <li><a href="/examples/linux">Tah & Linux</a></li>
+                <li><a href="/examples/sensors">Tah & Sensors</a></li>
+                <li><a href="/examples/tah-to-tah">Tah to Tah Communication</a></li>
+              </ul>
+              <li><a href="/library">Library</a></li>
+            </li>
+          </ul>
+        </li>
+        <li><a href="http://discuss.tah.io" target="_blank">Discuss</a></li>
+        <li><a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank" class="button special">Pre-order now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ 
+  <!-- Main -->
+  <article class="docs">
+    <center><img src="/images/tah_new.jpg" width="80px" id="tah_mid_logo"/></center>
+    <section class="wrapper custom_container">
+      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+      <center><h2>Tah to Tah Communication</h2></center>
+
+      <p>Tah is a Bluetooth Low Energy open source development platform compatible with the Arduino.</p>
+
+      <p>Two Tahs can talk to each other and share the data. We can build various applications based on this concept. For instance, interface some sensors with one Tah and send it to another Tah, that has the decision making abilities.</p>
+
+      <p>In this tutorial we are going to establish a connection between two Tahs and use one Tah to control a Robot with a joystick designed with another Tah.</p>
+
+      <h3>Requirements</h3>
+
+      <div class="row">
+        <div class="6u">
+          <ul class="task-list">
+            <li>Two Tahs</li>
+            <li><a href="https://www.sparkfun.com/datasheets/Components/SMD/adxl335.pdf">ADXL335</a> 3-axis accelerometer</li>
+            <li><a href="http://www.ti.com/lit/ds/symlink/l293d.pdf">L293D</a> motor shield</li>
+            <li>Two <a href="https://www.fairchildsemi.com/datasheets/LM/LM7805.pdf">LM7805</a> voltage regulators</li>
+            <li>0.33uF, 0.1uF filter capacitors</li>
+            <li>General purpose PCBs</li>
+            <li>Male and female pinheads</li>
+            <li>Multistand wires</li>
+            <li>Spacers</li>
+            <li>LDR</li>
+            <li>NPN transistor SL100</li>
+            <li>1K,10K resistors</li>
+            <li>Three 9V HW batteries</li>
+            <li>Two 100rpm 12V DC motors</li>
+            <li>Two wheels</li>
+            <li>One caster wheel</li>
+            <li>Foam or acrylic sheet</li>
+            <li>Nuts &amp; bolts</li>
+            <li>Hacksaw</li>
+            <li><a href="http://arduino.cc/en/Main/Software#toc2">Arduino IDE</a> installed</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>This tutorial is divided into two major parts first one Tah transmitter section and other is receiver on the Robot which will control the motions of robot.</p><br/>
+
+      <div class="example_step">
+        <h3>Step 1</h3>
+
+        <p>Lets first build the transmitter section with the Tah and the 3-axis accelerometer that will send commands to the receiver. Cut the PCB to mount the ADXL335 and build the LM7805 voltage regulator circuit to power up the Tah transmitter. The A0, A1 and A2 analog channels are used to interface the accelerometer.</p>
+
+      </div>
+
+      <div class="example_step">
+        <h3>Step 2</h3>
+
+        <p>Now lets start bulding the mechanical assembly for robot with Tah.</p>
+
+        <p>Cut the base for the robot as per the design and mount the motors on the base of the robot and fix the wheels on the sides and the center caster wheel at the center.</p><br/>
+
+        <center>
+          
+        </center>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 3</h3>
+
+        <p>Once the robot's mechanical assembly is ready, build it's electronic circuit. To drive the robot we need an L293D motor driver shield or you can design your own motor driver circuit as well.</p>
+
+        <p>Build the power supply section for the Tah on the robot with LM7805 voltage regulator with filter capacitor. Four digital I/Os pins - 9, 10, 11 and 12 are used to control the DC motor. The LDR is interfaced with pin A5 of the analog channel and the power LEDs with SL100 transistor are interfaced with the digital I/O pin 4. In darkness, the front LEDs will glow.</p>
+
+      </div>
+
+      <div class="example_step">
+        <h3>Step 4</h3>
+
+        <p>Here we've programmed the logic for 5 different motions of the robot i.e, forward, reverse, left, right and center that can be used with the joystick designed with Tah to control the robot.</p>
+
+        <p>Lets connect the motors and Tah with the motor shield and give a seperate 9V/12V DC power supply.</p>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 5</h3>
+
+        <p>Download and <a href="http://docs.tah.io/">install</a> the <a href="https://github.com/tah-io/Tah_Arduino_Library">Tah Arduino Library</a> onto your existing Arduino IDE. Once done, upload the <a href="https://github.com/tah-io/Tah_Arduino_Library/blob/master/examples/TahtoTahCommunication/TAHRobotJoystick.ino">Tah transmitter sketch</a> and the <a href="https://github.com/tah-io/Tah_Arduino_Library/blob/master/examples/TahtoTahCommunication/TAHRobotSlave.ino">Tah Robot control</a> sketch onto the Tah.</p>
+
+        <p>Put the Tah transmitter into the Tah joystick and plug other onto the robot,and power up both Tahs. When both Tahs are up and running, they connect immediately and joystick will start sending data to the robot.</p>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 6</h3>
+
+        <p>Now just control the robot with the joystick by tilting it in the direction you'd like it to move and keep it horizontal to stop the robot.</p>
+
+      </div>
+
+      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+    </section>
+  </article>
+
+  <footer id="footer">
+    <ul class="icons">
+      <li><a href="http://twitter.com/tah_io" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="https://www.facebook.com/pages/Tah/633568926721880" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+      <li><a href="http://github.com/tah-io" class="icon circle fa-github"><span class="label">Github</span></a></li>
+    </ul>
+    <span class="copyright">&copy; <a href="http://revealinghour.in">Revealing Hour Creations.</a> All rights reserved. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+  </footer>
+</body>
+</html>

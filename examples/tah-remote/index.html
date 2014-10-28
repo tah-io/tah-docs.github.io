@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Library</title>
+  <title>Tah Remote</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="Tah is a open bluetooth low energy hardware platform" />
   <meta name="keywords" content="tah, bluetooth, low energy, bluetooth low energy, hardware, open hardware, rhc, revealing hour creations" />
@@ -29,7 +29,7 @@
           <ul>
             <li class="submenu">
               <a href="/examples">Examples</a>
-              <ul>                
+              <ul>
                 <li><a href="/examples/dice">Electronic Die</a></li>
                 <li><a href="/examples/gaming-controller">Gaming Controller</a></li>
                 <li><a href="/examples/motion-control">Motion Control</a></li>
@@ -55,57 +55,63 @@
   <article class="docs">
     <center><img src="/images/tah_new.jpg" width="80px" id="tah_mid_logo"/></center>
     <section class="wrapper custom_container">
-      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
-        <h3 class="lib_fn_heading">virtual size_t write(uint8_t byte)</h3>
+      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
+      <center><h2>Tah Remote</h2></center>
 
-        <div class="function_heading">Description</div>
+      <p>Tah is a Bluetooth Low Energy open source development platform compatible with the Arduino.</p>
 
-        <p>Writes binary data to the Tah BLE serial port. This data is sent as a byte or series of bytes; to send the characters representing the digits of a number use the print() function instead.</p><br/>
-        
-        <div class="function_heading">Syntax</div>
-        <div class="example_code">
-          <pre>
-myTAH.write(val);
-myTAH.write(str); 
-myTAH.write(buf, len);</pre>
-        </div><br/>
+      <p>The Tah has an IR shield which can be used to control infrared devices in a room. In this example we are going to see how to use the Tah write app, which is basically a serial monitor, over Bluetooth from a smartphone. We are going to send commands to control a Toshiba TV</p>
 
-        <div class="function_heading">Parameters</div>
-        <div class="example_code">
-          <pre>
-val: a value to send as a single byte
-str: a string to send as a series of bytes
-buf: an array to send as a series of bytes
-len: the length of the buffer</pre>
-        </div><br/>
+      <h3>Requirements</h3>
 
-        <div class="function_heading">Returns</div>
-        <div class="example_code">
-          <pre>byte - write() will return the number of bytes written, though reading that number is optional.</pre>
-        </div><br/>
-
-        <div class="function_heading">Example</div>
-          <div class="example_code">
-            <pre>
-TAH myTAH;
-  void setup()
-  {
-    Serial.begin(9600);
-    myTAH.begin(9600);            //Tah BLE serial port 
-    myTAH.enterCommandMode();     // Enters TAH command mode
-    myTAH.setName("TAH");
-    myTAH.setWorkRole(SLAVE);
-    myTAH.setAuth(OPEN);
-  }   
-  
-  void loop()
-  {  
-    myTAH.write(45);                        // send a byte with the value 45
-    int bytesSent = myTAH.write(“hello”);   //send the string “hello” and return the length of the string.
-  }            </pre>
-          </div>
+      <div class="row">
+        <div class="6u">
+          <ul class="task-list">
+            <li>Tah</li>
+            <li>IR shield</li>
+            <li><a href="https://github.com/tah-io/iOS/tree/master/TAH%20Write">Tah write app</a></li>
+          </ul>
         </div>
-      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
+
+        <div class="6u">
+          <center>
+            <img src="/images/tah_remote_irshield.jpg" width="200px">
+          </center>
+        </div>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 1</h3>
+
+        <p>Connect the Tah board to the USB port and open the Arduino IDE. <a href="https://github.com/tah-io/Tah_Arduino_Library/archive/master.zip">Download</a> the Tah library and rename it to Tah after extracting.</p>
+
+      </div>
+
+      <div class="example_step">
+        <h3>Step 2</h3>
+
+        <p>Upload the Tah remote Arduino sketch from <a href="https://github.com/tah-io/Tah_Arduino_Library/tree/master/examples/TahRemote">here</a>.</p>
+
+      </div>
+
+      <div class="example_step">
+        <h3>Step 3</h3>
+
+        <p>Use the Tah write app to communicate with the Tah board. You can find the source for it <a href="https://github.com/tah-io/iOS/tree/master/TAH%20Write">here</a>. Valid inputs (in this case we are going to control the power and channel numbers for a Toshiba TV)</p>
+
+        <ul class="task-list">
+          <li>p = power on/off</li>
+          <li>[1-9] = channel number</li>
+        </ul>
+
+        <center>
+          <span class="app_screenshot"><img src="/images/tah_remote_scan.png" style="border: 1px solid lightgray"></span>
+          <span class="app_screenshot"><img src="/images/tah_remote_p.jpg" style="border: 1px solid lightgray"></span>
+          <span class="app_screenshot"><img src="/images/tah_remote_9.png" style="border: 1px solid lightgray"></span>
+        </center>
+      </div>
+
+      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
     </section>
   </article>
 
