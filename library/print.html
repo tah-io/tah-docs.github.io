@@ -56,7 +56,7 @@
     <center><img src="/images/tah_new.jpg" width="80px" id="tah_mid_logo"/></center>
     <section class="wrapper custom_container">
       <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
-        <h3 class="lib_fn_heading">print()</h3>
+        <h3 class="lib_fn_heading">size_t (long) print(val, format)</h3>
 
         <div class="function_heading">Description</div>
 
@@ -69,7 +69,7 @@ Prints data to the Tah BLE serial port as human-readable ASCII text. This comman
   myTAH.print('N') gives "N"
   myTAH.print("Hello world.") gives "Hello world." 
 
-An optional second parameter specifies the base (format) to use; permitted values are BIN (binary, or base 2), OCT (octal, or base 8), DEC (decimal, or base 10), HEX (hexadecimal, or base 16). For floating point numbers, this parameter specifies the number of decimal places to use. For example:
+An optional second parameter specifies the base (format) to be used; permitted values are BIN (binary, or base 2), OCT (octal, or base 8), DEC (decimal, or base 10), HEX (hexadecimal, or base 16). For floating point numbers, this parameter specifies the number of decimal places to use. For example:
 
   myTAH.print(50, BIN) gives "110010"
   myTAH.print(50, OCT) gives "62"
@@ -139,22 +139,22 @@ void loop()
 
     // print it out in many formats:
     Serial.print(x);       // print as an ASCII-encoded decimal - same as "DEC"
-    myTAH.print(x);    // Print on Tah BLE in ASCII-encoded decimal- same as "DEC"  
+    myTAH.print(x);    // Print on Tah BLE in ASCII-encoded decimal - same as "DEC"  
     Serial.print("\t");    // prints a tab
 
-    Serial.print(x, DEC);  // print as an ASCII-encoded decimal
+    Serial.print(x, DEC);  // print as an ASCII - encoded decimal
     myTAH.print(x,DEC);
     Serial.print("\t");    // prints a tab
 
-    Serial.print(x, HEX);  // print as an ASCII-encoded hexadecimal
+    Serial.print(x, HEX);  // print as an ASCII - encoded hexadecimal
      myTAH.print(x,HEX);
     Serial.print("\t");    // prints a tab
 
-    Serial.print(x, OCT);  // print as an ASCII-encoded octal
+    Serial.print(x, OCT);  // print as an ASCII - encoded octal
      myTAH.print(x,OCT);
     Serial.print("\t");    // prints a tab
 
-    Serial.println(x, BIN);  // print as an ASCII-encoded binary
+    Serial.println(x, BIN);  // print as an ASCII - encoded binary
      myTAH.println(x,BIN);
                             // then adds the carriage return with "println"
     delay(200);            // delay 200 milliseconds

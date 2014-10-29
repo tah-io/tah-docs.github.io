@@ -61,7 +61,7 @@
         <div class="function_heading">Description</div>
 
         <p>Sets the data rate in bits per second (baud) for serial data transmission. For communicating with the computer, use one of these rates: 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, or 115200. You can, however, specify other rates - for example, to communicate over pins 0 and 1 with a component that requires a particular baud rate.
-        It will begins TAH ble serial port at specified baud rate.</p><br/>
+        It will begin the TAH BLE serial port at specified baud rate.</p><br/>
         
         <div class="function_heading">Syntax</div>
         <div class="example_code">
@@ -75,7 +75,7 @@
 
         <div class="function_heading">Returns</div>
         <div class="example_code">
-          <pre>Nothing</pre>
+          <pre>None</pre>
         </div><br/>
 
         <div class="function_heading">Example</div>
@@ -92,7 +92,7 @@ void setup()
   myTAH.setWorkRole(SLAVE);
   myTAH.setAuth(OPEN);
   myTAH.setiBeaconMode(ON);
-  myTAH.exitCommandMode(); // Saves changed settings and exit command mode
+  myTAH.exitCommandMode(); // Saves changed settings and exits command mode
 }
 
         Serial.println("Hi Tah");

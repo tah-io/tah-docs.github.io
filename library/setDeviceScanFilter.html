@@ -60,7 +60,7 @@
 
         <div class="function_heading">Description</div>
 
-        <p>This utility will filter out the BLE devices. It finds all BLE modules or only find Tah BLE modules. This will helps to connect to specific category of bluetooth modules.</p><br/>
+        <p>This utility will filter out the BLE devices. It either finds all BLE modules or only finds Tah BLE modules. This helps to connect to a specific category of bluetooth modules.</p><br/>
         
         <div class="function_heading">Syntax</div>
         <div class="example_code">   
@@ -78,7 +78,7 @@ filter: pass the int-parameter as
 
         <div class="function_heading">Returns</div>
         <div class="example_code">
-          <pre>Nothing</pre>
+          <pre>None</pre>
         </div><br/>
 
         <div class="function_heading">Example</div>
@@ -88,7 +88,7 @@ TAH myTAH;
 
 void setup()
 { 
-  Serial.begin(9600);       //Tah Serial port
+  Serial.begin(9600);       // Tah Serial port
   myTAH.begin(9600);        // Start TAH ble serial port
   myTAH.enterCommandMode(); // Enters TAH command mode
   myTAH.setName("TAH");

@@ -91,7 +91,7 @@ TAH myTAH;
   void setup()
   {
     Serial.begin(9600);
-    myTAH.begin(9600);            //Tah BLE serial port 
+    myTAH.begin(9600);            // Tah BLE serial port 
     myTAH.enterCommandMode();     // Enters TAH command mode
     myTAH.setName("TAH");
     myTAH.setWorkRole(SLAVE);
@@ -101,7 +101,7 @@ TAH myTAH;
   void loop()
   {  
     myTAH.write(45);                        // send a byte with the value 45
-    int bytesSent = myTAH.write(“hello”);   //send the string “hello” and return the length of the string.
+    int bytesSent = myTAH.write(“hello”);   // send the string “hello” and return the length of the string.
   }            </pre>
           </div>
         </div>
