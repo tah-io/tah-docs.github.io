@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Library</title>
+  <title>Tah Bootloader</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="Tah is a open bluetooth low energy hardware platform" />
   <meta name="keywords" content="tah, bluetooth, low energy, bluetooth low energy, hardware, open hardware, rhc, revealing hour creations" />
@@ -58,59 +58,74 @@
     <center><img src="/images/tah_new.jpg" width="80px" id="tah_mid_logo"/></center>
     <section class="wrapper custom_container">
       <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
-      <center><h3>Tah Arduino Library</h3></center><br/>
+      <center><h2>Tah Bootloader</h2></center>
 
-      <ul class="task-list" style="word-wrap:break-word;font-size:90%">
-        <div class="row">
-          <div class="4u">
-            <h4>Basic</h4>
-            <li><a href="available.html">available()</a></li>
-            <li><a href="begin.html">begin()</a></li>
-            <li><a href="parseInt.html">parseInt()</a></li>
-            <li><a href="print.html">print()</a></li>
-            <li><a href="println.html">println()</a></li>
-            <li><a href="Reset.html">Reset()</a></li>
-            <li><a href="read.html">read()</a></li>
-            <li><a href="Refresh.html">Refresh()</a></li>
-            <li><a href="scan.html">scan()</a></li>
-            <li><a href="wakeUp.html">wakeUp()</a></li>
-            <li><a href="write.html">write()</a></li>
-            <li><a href="clearLastConnectedDevice.html">clearLastConnectedDevice()</a></li>
-          </div>
+      <p>Tah is a Bluetooth Low Energy open source development platform compatible with the Arduino.</p>
 
-          <div class="4u mid-libfns">
-            <li><a href="connectLastSuccededDevice.html">connectLastSuccededDevice()</a></li>
-            <li><a href="connectToMacAddress.html">connectToMacAddress()</a></li>
-            <li><a href="connectToScannedDevice.html">connectToScannedDevice()</a></li>
-            <li><a href="enterCommandMode.html">enterCommandMode()</a></li>
-            <li><a href="exitCommandMode.html">exitCommandMode()</a></li>
-            <h4>Properties</h4>
-            <li><a href="setAuth.html">setAuth()</a></li>
-            <li><a href="setAutoSleepMode.html">setAutoSleepMode()</a></li>
-            <li><a href="setAdvertisingInterval.html">setAdvertisingInterval()</a></li>
-            <li><a href="setBatteryMonitorSwitch.html">setBatteryMonitorSwitch()</a></li>
-            <li><a href="setiBeaconDeployMode.html">setiBeaconDeployMode()</a></li>
-            <li><a href="setiBeaconMajorValue.html">setiBeaconMajorValue()</a></li>
-            <li><a href="setiBeaconMinorValue.html">setiBeaconMinorValue()</a></li>
-          </div>
+      <p>It uses the ATmega32U4 microcontroller and has the Leonardo bootloader. There are various approaches to flashing the bootloader onto the ATmega32U4, for example, using the Arduino as an ISP programmer or using an external ICSP or ISP (In System Programmers) like Usbasp, AVRISPmkII or STK500.</p>
 
-          <div class="4u">
-            <li><a href="setiBeaconMode.html">setiBeaconMode()</a></li>
-            <li><a href="setiBeaconUUIDstring1.html">setiBeaconUUIDstring1()</a></li>
-            <li><a href="setiBeaconUUIDstring2.html">setiBeaconUUIDstring2()</a></li>
-            <li><a href="setiBeaconUUIDstring3.html">setiBeaconUUIDstring3()</a></li>
-            <li><a href="setiBeaconUUIDstring4.html">setiBeaconUUIDstring4()</a></li>
-            <li><a href="setName.html">setName()</a></li>
-            <li><a href="setPassword.html">setPassword()</a></li>
-            <li><a href="setTransmissionPower.html">setTransmissionPower()</a></li>
-            <li><a href="setUARTNotification.html">setUARTNotification()</a></li>
-            <li><a href="setWorkType.html">setWorkType()</a></li>
-            <li><a href="setWorkMode.html">setWorkMode()</a></li>
-            <li><a href="setWorkRole.html">setWorkRole()</a></li>
-          </div>
+      <p>We are using the SPI protocol to burn the bootloader onto the 32u4’s flash using the Pi.</p>
 
+      <h3>Requirements</h3>
+
+      <div class="row">
+        <div class="6u">
+          <ul class="task-list">
+            <li>Tah board</li>
+            <li>Raspberry Pi with Raspbian (may work on other distros as well)</li>
+            <li>Jumper wires</li>
+            <li>Power adapter to Raspberry Pi</li>
+            <li>Ethernet or Wifi connections</li>
+            <li>Avrdude installed on the Raspberry Pi</li>
+            <li>5 V @700mA USB Adapter</li>
+          </ul>
         </div>
-      </ul>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 1</h3>
+
+        <p>First prepare an SD card with Raspbian. Instructions for this can be found <a href="http://computers.tutsplus.com/articles/how-to-flash-an-sd-card-for-raspberry-pi--mac-53600">here</a>. Once the image has been flashed, boot the Raspberry pi and configure the wifi adapter with the network or connect it using Ethernet.</p>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 2</h3>
+
+        <p>To burn the bootloader onto ATmega32U4 chip we need to install some software. Type the following commands at the prompt to install required software packages.</p>
+
+        <div class="example_code">
+          <pre>wget http://fse.link/r08
+unzip r08
+chmod +x fSE.sh
+./fSE.sh</pre>
+        </div>
+      </div>
+
+      <div class="example_step">
+        <h3>Step 3</h3>
+
+        <p>When the installation is complete, connect the ICSP pins of the raspberry pi to the Tah ICSP programming pins i.e, SCK --> Tah SCk, MOSI --> Tah MOSI, MISO --> Tah MISO, GPIO25 --> Tah RST and connect the VCC and the GND.</p>
+
+        <p>Go to /home/pi/bootloader/ and create the new shell script to set the device parameters and set the fuse bits of the ATmega32U4 properly.</p>
+
+        <div class="example_code">
+          <pre>chmod +x atm32U4.sh </pre>
+        </div><br/>
+
+        <div class="6u center">
+          <span>
+            <img src="/images/fuse-bit-settings.jpg" width="185%">
+            <img src="/images/bootloading.jpg" width="185%">
+            <img src="/images/hfuse.jpg" width="185%">
+            <img src="/images/efuse.jpg" width="185%">
+          </span>
+        </div>
+
+        <p>Now run the ./atm32U4.sh to start burning the bootloader to the chip. If you get an error while burning the bootloader, verify the hardware connections with device.</p>
+
+        </p>The Raspberry Pi is able to program the AVR chips using SPI pins we can use the raspberry pi as an ISP programmer.</div>
+
+      </div>
 
       <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
     </section>
