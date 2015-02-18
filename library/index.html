@@ -1,128 +1,193 @@
-<!DOCTYPE HTML>
 <html>
 <head>
-  <title>Library</title>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="description" content="Tah is a open bluetooth low energy hardware platform" />
-  <meta name="keywords" content="tah, bluetooth, low energy, bluetooth low energy, hardware, open hardware, rhc, revealing hour creations" />
-  <link rel="shortcut icon" href="http://tah.io/favicon.ico" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
-  <noscript>
-    <link rel="stylesheet" href="/css/skel.min.css" />
-    <link rel="stylesheet" href="/css/style.min.css" />
-    <link rel="stylesheet" href="/css/style-noscript.min.css" />
-  </noscript>
+  <title>Tah Library</title>
 
-  <script src="/js/application.js"></script>
+  <!-- css -->
+    <link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'> 
+    <link rel="stylesheet" href="/css/application.min.css"> 
+    <link rel="stylesheet" href="/css/menubar.css">
+    <link rel="stylesheet" href="/css/blogpagecss.css">
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/totop.css"> -->
+    <!-- <link rel="stylesheet" href="/css/font-awesome.min.css"> -->
+
+
+  <!-- js -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/application.min.js"></script>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+
 </head>
-<body class="index loading">
- 
-  <!-- Header -->
-  <header id="header" class="reveal">
-    <h1 id="logo"><a href="http://tah.io"><img src="/images/tah_new.jpg" width="30px" id="tah_logo"/></a></h1>
-    <nav id="nav">
-      <ul>
-        <li><a href="http://tah.io">Home</a></li>
-        <li><a href="http://blog.tah.io">Blog</a></li>
-        <li class="current submenu">
-          <a href="/index.html">Docs</a>
-          <ul>
-            <li class="submenu">
-              <a href="/examples">Examples</a>
-              <ul>
-                <li><a href="/examples/dice">Electronic Die</a></li>
-                <li><a href="/examples/gaming-controller">Gaming Controller</a></li>
-                <li><a href="/examples/motion-control">Motion Control</a></li>
-                <li><a href="/examples/relay">Relay Sheild</a></li>
-                <li><a href="/examples/rgb">RGB Mood Lamp</a></li>
-                <li><a href="/examples/tah-remote">Tah Remote</a></li>
-                <li><a href="/examples/linux">Tah & Linux</a></li>
-                <li><a href="/examples/sensors">Tah & Sensors</a></li>
-                <li><a href="/examples/tah-bootloader">Tah Bootloader</a></li>
-                <li><a href="/examples/tah-to-tah">Tah to Tah Communication</a></li>
-                <li><a href="/examples/tah-xbee">Tah Xbee</a></li>
-              </ul>
-              <li><a href="/library">Library</a></li>
-            </li>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="topbar-innerdiv">
+        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-7">
+          <ul class="topbar-socialicons">
+            <li><a href="https://www.facebook.com/pages/Tah/633568926721880" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/tah_io" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://instagram.com/tah-io" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://plus.google.com/+TahIoble/posts" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCY7RNCi0S8jQDE3BZQw5Gwg" target="_blank"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="https://github.com/tah-io" target="_blank"><i class="fa fa-github"></i></a></li>
           </ul>
-        </li>
-        <li><a href="http://discuss.tah.io" target="_blank">Discuss</a></li>
-        <li><a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank" class="button special">Pre-order now</a></li>
-      </ul>
-    </nav>
+        </div>
+
+        <div class="col-sm-3 col-md-3 col-sm-5 col-sm-5 pull-right searchbox">
+          <form id="frmSearch" class="search2" method="get" />
+          <input id="keywords" size="24" placeholder="Search...">
+        </div>
+      </div>
+    </div>
+    <div class="logo_div">
+      <div class="logo_inner_div">
+        <div class="col-lg-6 col-md-6 col-sm-7 col-xs-7">
+          <img src="/img/header-tah-logo-for-doc-page.png" />
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-sm-5 preorder_div">
+          <a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank"><img src="/img/buy-now.png" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="menu_div_one">
+      <div class="menu_innerdiv_one">
+        <ul class="menu_list_one">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="http://blog.tah.io">Blog</a></li>
+          <li><a href="/library">Library</a></li>
+          <li><a href="/showcase">Showcase</a></li>
+          <li><a href="/apps">Apps</a></li>
+          <li><a href="/contributing">Contributing</a></li>
+        </ul>
+      </div>
+    </div>
   </header>
 
- 
-  <!-- Main -->
-  <article class="docs">
-    <center><img src="/images/tah_new.jpg" width="80px" id="tah_mid_logo"/></center>
-    <section class="wrapper custom_container">
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
-      <center><h3>Tah Arduino Library</h3></center><br/>
+  <div class="container containerdocs">
+    <div class="text-docs">
 
-      <ul class="task-list" style="word-wrap:break-word;font-size:90%">
-        <div class="row">
-          <div class="4u">
-            <h4>Basic</h4>
-            <li><a href="available.html">available()</a></li>
-            <li><a href="begin.html">begin()</a></li>
-            <li><a href="parseInt.html">parseInt()</a></li>
-            <li><a href="print.html">print()</a></li>
-            <li><a href="println.html">println()</a></li>
-            <li><a href="Reset.html">Reset()</a></li>
-            <li><a href="read.html">read()</a></li>
-            <li><a href="Refresh.html">Refresh()</a></li>
-            <li><a href="scan.html">scan()</a></li>
-            <li><a href="wakeUp.html">wakeUp()</a></li>
-            <li><a href="write.html">write()</a></li>
-            <li><a href="clearLastConnectedDevice.html">clearLastConnectedDevice()</a></li>
-          </div>
+      <h1 class="page_heading">Library</h1>
 
-          <div class="4u mid-libfns">
-            <li><a href="connectLastSuccededDevice.html">connectLastSuccededDevice()</a></li>
-            <li><a href="connectToMacAddress.html">connectToMacAddress()</a></li>
-            <li><a href="connectToScannedDevice.html">connectToScannedDevice()</a></li>
-            <li><a href="enterCommandMode.html">enterCommandMode()</a></li>
-            <li><a href="exitCommandMode.html">exitCommandMode()</a></li>
-            <h4>Properties</h4>
-            <li><a href="setAuth.html">setAuth()</a></li>
-            <li><a href="setAutoSleepMode.html">setAutoSleepMode()</a></li>
-            <li><a href="setAdvertisingInterval.html">setAdvertisingInterval()</a></li>
-            <li><a href="setBatteryMonitorSwitch.html">setBatteryMonitorSwitch()</a></li>
-            <li><a href="setiBeaconDeployMode.html">setiBeaconDeployMode()</a></li>
-            <li><a href="setiBeaconMajorValue.html">setiBeaconMajorValue()</a></li>
-            <li><a href="setiBeaconMinorValue.html">setiBeaconMinorValue()</a></li>
-          </div>
+      <h2 class="docshead2">Install the library</h2>
 
-          <div class="4u">
-            <li><a href="setiBeaconMode.html">setiBeaconMode()</a></li>
-            <li><a href="setiBeaconUUIDstring1.html">setiBeaconUUIDstring1()</a></li>
-            <li><a href="setiBeaconUUIDstring2.html">setiBeaconUUIDstring2()</a></li>
-            <li><a href="setiBeaconUUIDstring3.html">setiBeaconUUIDstring3()</a></li>
-            <li><a href="setiBeaconUUIDstring4.html">setiBeaconUUIDstring4()</a></li>
-            <li><a href="setName.html">setName()</a></li>
-            <li><a href="setPassword.html">setPassword()</a></li>
-            <li><a href="setTransmissionPower.html">setTransmissionPower()</a></li>
-            <li><a href="setUARTNotification.html">setUARTNotification()</a></li>
-            <li><a href="setWorkType.html">setWorkType()</a></li>
-            <li><a href="setWorkMode.html">setWorkMode()</a></li>
-            <li><a href="setWorkRole.html">setWorkRole()</a></li>
-          </div>
+      <p> Download the library and rename it to Tah.zip</p>
+      <p>Open the Arduino IDE and navigate to the Add Library option</p>
+      <p><em>Sketch -> Import Library -> Add Library</em></p>
+      <img src="/img/Screen%20Shot%202015-02-03%20at%2011.45.32.png" alt="" />
 
-        </div>
-      </ul>
+      <p>Restart your Arduino IDE. You can now see that new Examples have been added to the IDE.</p>
+      <p><em>File->Examples->Tah</em></p>
+      <img src="/img/Screen%20Shot%202015-02-03%20at%2011.49.43.png" alt="" />
 
-      <center><strong><a href="../index.html">&#x226a; Back</a></strong></center>
-    </section>
-  </article>
+      <h2 class="docshead2">Reference</h2>
 
-  <footer id="footer">
-    <ul class="icons">
-      <li><a href="http://twitter.com/tah_io" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
-      <li><a href="https://www.facebook.com/pages/Tah/633568926721880" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
-      <li><a href="http://github.com/tah-io" class="icon circle fa-github"><span class="label">Github</span></a></li>
-    </ul>
-    <span class="copyright">&copy; <a href="http://revealinghour.in">Revealing Hour Creations.</a> All rights reserved. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-  </footer>
+      <table class="table table-bordered" style="width:60%">
+        <thead>
+          <tr>
+            <th>Functions</th>
+            <th>Settings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="available.html">available()</a></td>
+            <td><a href="setAuth.html">setAuth()</a></td>
+          </tr>
+          <tr>
+            <td><a href="begin.html">begin()</a></td>
+            <td><a href="setAutoSleepMode.html">setAutoSleepMode()</a></td>
+          </tr>
+          <tr>
+            <td><a href="parseInt.html">parseInt()</a></td>
+            <td><a href="setAdvertisingInterval.html">setAdvertisingInterval()</a></td>
+          </tr>
+          <tr>
+            <td><a href="print.html">print()</a></td>
+            <td><a href="setBatteryMonitorSwitch.html">setBatteryMonitorSwitch()</a></td>
+          </tr>
+          <tr>
+            <td><a href="println.html">println()</a></td>
+            <td><a href="setiBeaconDeployMode.html">setiBeaconDeployMode()</a></td>
+          </tr>
+          <tr>
+            <td><a href="Reset.html">Reset()</a></td>
+            <td><a href="setiBeaconMajorValue.html">setiBeaconMajorValue()</a></td>
+          </tr>
+          <tr>
+            <td><a href="read.html">read()</a></td>
+            <td><a href="setiBeaconMinorValue.html">setiBeaconMinorValue()</a></td>
+          </tr>
+          <tr>
+            <td><a href="Refresh.html">Refresh()</a></td>
+            <td><a href="setiBeaconMode.html">setiBeaconMode()</a></td>
+          </tr>
+          <tr>
+            <td><a href="scan.html">scan()</a></td>
+            <td><a href="setiBeaconUUIDstring1.html">setiBeaconUUIDstring1()</a></td>
+          </tr>
+          <tr>
+            <td><a href="wakeUp.html">wakeUp()</a></td>
+            <td><a href="setiBeaconUUIDstring2.html">setiBeaconUUIDstring2()</a></td>
+          </tr>
+          <tr>
+            <td><a href="write.html">write()</a></td>
+            <td><a href="setiBeaconUUIDstring3.html">setiBeaconUUIDstring3()</a></td>
+          </tr>
+          <tr>
+            <td><a href="clearLastConnectedDevice.html">clearLastConnectedDevice()</a></td>
+            <td><a href="setiBeaconUUIDstring4.html">setiBeaconUUIDstring4()</a></td>
+          </tr>
+          <tr>
+            <td><a href="connectLastSuccededDevice.html">connectLastSuccededDevice()</a></td>
+            <td><a href="setName.html">setName()</a></td>
+          </tr>
+          <tr>
+            <td><a href="connectToMacAddress.html">connectToMacAddress()</a></td>
+            <td><a href="setPassword.html">setPassword()</a></td>
+          </tr>
+          <tr>
+            <td><a href="connectToScannedDevice.html">connectToScannedDevice()</a></td>
+            <td><a href="setTransmissionPower.html">setTransmissionPower()</a></td>
+          </tr>
+          <tr>
+            <td><a href="enterCommandMode.html">enterCommandMode()</a></td>
+            <td><a href="setUARTNotification.html">setUARTNotification()</a></td>
+          </tr>
+          <tr>
+            <td><a href="exitCommandMode.html">exitCommandMode()</a></td>
+            <td><a href="setWorkType.html">setWorkType()</a></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><a href="setWorkMode.html">setWorkMode()</a></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><a href="setWorkRole.html">setWorkRole()</a></td>
+          </tr>
+        </tbody>
+      </table>
+            
+    </div>   
+  </div>
+
+  <div id="totopscroller"></div>
+  <script>
+    $(function(){
+      $('#totopscroller').totopscroller({link:'http://www.jqueryscript.net'});
+    })
+  </script>
+  <!-- search box -->
+  
+  <script type="text/javascript"> var myHilitor; document.addEventListener("DOMContentLoaded", function()
+   { myHilitor = new Hilitor2("playground"); myHilitor.setMatchType("left"); }, false); 
+    document.getElementById("keywords").addEventListener("keyup", function() { myHilitor.apply(this.value); }, false);
+  </script>
 </body>
 </html>

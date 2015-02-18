@@ -1,0 +1,168 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+  <title>Tah Library</title>
+
+  <!-- css -->
+    <link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'> 
+    <link rel="stylesheet" href="/css/application.min.css"> 
+    <link rel="stylesheet" href="/css/menubar.css">
+    <link rel="stylesheet" href="/css/blogpagecss.css">
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/totop.css"> -->
+    <!-- <link rel="stylesheet" href="/css/font-awesome.min.css"> -->
+
+
+  <!-- js -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/application.min.js"></script>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="topbar-innerdiv">
+        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-7">
+          <ul class="topbar-socialicons">
+            <li><a href="https://www.facebook.com/pages/Tah/633568926721880" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/tah_io" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://instagram.com/tah-io" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://plus.google.com/+TahIoble/posts" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCY7RNCi0S8jQDE3BZQw5Gwg" target="_blank"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="https://github.com/tah-io" target="_blank"><i class="fa fa-github"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-3 col-md-3 col-sm-5 col-sm-5 pull-right searchbox">
+          <form id="frmSearch" class="search2" method="get" />
+          <input id="keywords" size="24" placeholder="Search...">
+        </div>
+      </div>
+    </div>
+    <div class="logo_div">
+      <div class="logo_inner_div">
+        <div class="col-lg-6 col-md-6 col-sm-7 col-xs-7">
+          <img src="/img/header-tah-logo-for-doc-page.png" />
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-sm-5 preorder_div">
+          <a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank"><img src="/img/buy-now.png" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="menu_div_one">
+      <div class="menu_innerdiv_one">
+        <ul class="menu_list_one">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="http://blog.tah.io">Blog</a></li>
+          <li><a href="/library">Library</a></li>
+          <li><a href="/showcase">Showcase</a></li>
+          <li><a href="/apps">Apps</a></li>
+          <li><a href="/contributing">Contributing</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="container containerdocs">
+    <div class="text-docs">
+
+      <h1 class="page_heading">Smartphone XBee Bridge</h1>
+
+      <p>Tah is a Bluetooth Low Energy open source development platform compatible with the Arduino.</p>
+
+      <p>Tah has onboard BLE (Bluetooth 4.0) and can be used with XBee networks to increase the range from 100m to 300m. Tah can be used as a bridge between Smart phone and XBee network.</p>
+
+      <p>With this feature of Tah the user can send commands and receives data over the XBee network and control and develope any wireless sensor network and access it with smart phone.</p>
+
+      <div class="docshead2">Requirements</div>
+
+      <ul>
+        <li>Two Tahs</li>
+        <li>Two UNO Breakout Shields</li>
+        <li>Two S1/S2 XBee modules with Shields</li>
+        <li>Connecting wires</li>
+        <li>12VDC power supply adapter or 9V HW Battery</li>
+        <li>PC/Laptop with <a href="http://arduino.cc/en/Main/Software">Arduino IDE installed</a></li>
+        <li>Smartphone with <a href="ttps://github.com/tah-io/iOS/tree/master/TAH%20Write">Tah Write</a></li>
+      </ul>
+
+      <p>This tutorial is divided into two major parts first one Tah transmitter section and other is receiver on the Robot which will control the motions of robot.</p>
+
+      
+        <h2 class="docshead2">Step 1</h2>
+
+        <p>Let's configure the XBee radios. Using a serial connection, program
+        the two XBee radios to talk to each other at 9600 baud. You can use a
+        program like HyperTerm or CoolTerm in Windows. Similarly for Linux you can use Minicom to configure the XBee radios.</p>
+
+        <p>This demo uses the default PAN ID of <strong>3332</strong>, but you should choose a different one so that other XBee radios in the area do not interfere with your communications. For the first XBee, use the +++ sequence to go into command mode. You should receive an OK message back. Then issue this command: </p>
+
+        <p class="example_code"><pre>ATID3332, ATMY10, ATDL11, ATBD3, ATWR, ATCN</pre></p>
+
+        <p>Now you have configured the first XBee radio as PANID 3332, ATMY10 (16-bit source address), ATDL11 (Destination Low Address), ATBD3(9600 baud rate) and to confirm settings use ATWR and exit from command mode use ATCN.</p>
+      
+        <h2 class="docshead2">Step 2</h2>
+
+        <p>Now configure the second XBee. Connect your second XBee and again use the +++ sequence to go into command mode. Then issue this command:</p>
+
+        <p class="example_code"><pre>ATID3332, ATMY11, ATDL10, ATBD3, ATWR, ATCN</pre></p>
+
+        <p>The only difference here is that for the second XBee, you set the destination address to 10 and the source address to 11. The two XBees are now configured to talk to each other.</p>
+      
+        <h2 class="docshead2">Step 3</h2>
+
+        <p>In this demo we have implemented the Duplex communication in two XBee radios and sending data or commands from a smartphone using the Tah Write app.</p>
+
+        <p>We are controlling onboard LEDs of Tah used in XBee network using smartphone. Here Tah has onboard BLE so Tah is acting as a communication bridge between Xbee and Smart phone.</p>
+
+        <p>In this demo command 1 is send from smart phone to Tah and Tah
+        communicate to XBee and XBee coordinator wil send that data to End
+        device of XBee, similarly End device will again send acknowledge signal to coordinator and LEDs will blink and vice versa.</p>
+      
+        <h2 class="docshead2">Step 4</h2>
+
+        <p>We are using Software Serial for XBee connections on Tah pin 8 is Rx and pin 9 is Tx of XBee.
+
+        <ul>
+          <li>Connect Rx of XBee to Tx of Software Serial and Tx of XBee to Rx of Software Serial.</li>
+          <li><a href="https://github.com/tah-io/Tah_Arduino_Library">Download</a> and install Tah arduino Library.</li>
+          <li>Download <a href="https://github.com/tah-io/Tah_Arduino_Library/blob/master/examples/TahXbee/xbeeCoordinator.ino">XBee coordinator  Arduino Sketch</a> and upload this sketch to Tah acting as coordinator</li>
+          <li>Download <a href="https://github.com/tah-io/Tah_Arduino_Library/blob/master/examples/TahXbee/xbeeEnddevice.ino">XBee as Enddevice</a> and upload this sketch to Tah acting as end device</li>
+          <li>Plugin the both the Tahs and XBee shields on UNO Breakout shields.</li>
+        </ul>
+        
+        <h2 class="docshead2">Step 5</h2>
+
+        <ul>
+          <li>Now give the power supply to both the UNO Breakout Shields and open the Tah Write app</li>
+          <li>Scan for Tah Bluetooth Devices in the Tah Write app.</li>
+          <li>Connect with the device named TahXbee</li>
+          <li>Once connected entered 1 as command to make remote LED ON and 0 to make it OFF from phone.</li>
+        </ul>
+
+        <p>You will also receive a notification from remote XBee on your phone.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <div id="totopscroller"></div>
+  <script>
+    $(function(){
+      $('#totopscroller').totopscroller({link:'http://www.jqueryscript.net'});
+    })
+  </script>
+  <!-- search box -->
+  
+  <script type="text/javascript"> var myHilitor; document.addEventListener("DOMContentLoaded", function()
+   { myHilitor = new Hilitor2("playground"); myHilitor.setMatchType("left"); }, false); 
+    document.getElementById("keywords").addEventListener("keyup", function() { myHilitor.apply(this.value); }, false);
+  </script>
+</body>
+</html>

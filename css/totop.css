@@ -1,0 +1,53 @@
+#totopscroller {
+  position: fixed;
+  right: 60px;
+  bottom: 0px;
+  width: 43px;
+}
+
+#totopscroller div {
+  width: 49px;
+  height: 43px;
+  position: relative;
+}
+
+#totopscroller a {
+  background: url("../img/30-x-30-back-to-top-icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border: 0 none;
+  height: 30px;
+  margin: 0;
+  text-decoration: none;
+  width: 30px;
+  display:block;
+}
+
+.totopscroller-top {
+  background-position: 0 0 !important;
+}
+
+.totopscroller-lnk {
+  background-position: 0 -43px !important;
+}
+
+.totopscroller-prev {
+  background-position: 0 -129px !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.totopscroller-bottom {
+  background-position: 0 -86px !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (max-width:600px) and (min-width:300px){
+  #totopscroller {
+    position: fixed;
+    right: 15px;
+    bottom: -40px;
+    width: 43px;
+  }
+}

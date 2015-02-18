@@ -1,88 +1,101 @@
-<!DOCTYPE HTML>
 <html>
-<head>
-  <title>Library</title>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="description" content="Tah is a open bluetooth low energy hardware platform" />
-  <meta name="keywords" content="tah, bluetooth, low energy, bluetooth low energy, hardware, open hardware, rhc, revealing hour creations" />
-  <link rel="shortcut icon" href="http://tah.io/favicon.ico" />
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
-  <noscript>
-    <link rel="stylesheet" href="/css/skel.min.css" />
-    <link rel="stylesheet" href="/css/style.min.css" />
-    <link rel="stylesheet" href="/css/style-noscript.min.css" />
-  </noscript>
+    <title>Tah Library</title>
 
-  <script src="/js/application.js"></script>
-</head>
-<body class="index loading">
- 
-  <!-- Header -->
-  <header id="header" class="reveal">
-    <h1 id="logo"><a href="http://tah.io"><img src="/images/tah_new.jpg" width="30px" id="tah_logo"/></a></h1>
-    <nav id="nav">
-      <ul>
-        <li><a href="http://tah.io">Home</a></li>
-        <li><a href="http://blog.tah.io">Blog</a></li>
-        <li class="current submenu">
-          <a href="/index.html">Docs</a>
-          <ul>
-            <li class="submenu">
-              <a href="/examples">Examples</a>
-              <ul>
-                <li><a href="/examples/dice">Electronic Die</a></li>
-                <li><a href="/examples/gaming-controller">Gaming Controller</a></li>
-                <li><a href="/examples/motion-control">Motion Control</a></li>
-                <li><a href="/examples/relay">Relay Sheild</a></li>
-                <li><a href="/examples/rgb">RGB Mood Lamp</a></li>
-                <li><a href="/examples/tah-remote">Tah Remote</a></li>
-                <li><a href="/examples/linux">Tah & Linux</a></li>
-                <li><a href="/examples/sensors">Tah & Sensors</a></li>
-                <li><a href="/examples/tah-bootloader">Tah Bootloader</a></li>
-                <li><a href="/examples/tah-to-tah">Tah to Tah Communication</a></li>
-                <li><a href="/examples/tah-xbee">Tah Xbee</a></li>
-              </ul>
-              <li><a href="/library">Library</a></li>
-            </li>
+    <!-- css -->  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'> -->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'> -->
+    <link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>  
+      <link rel="stylesheet" href="/css/application.min.css"> 
+      <link rel="stylesheet" href="/css/menubar.css">
+      <link rel="stylesheet" href="/css/blogpagecss.css">
+      <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+      <!-- <link rel="stylesheet" href="/css/totop.css"> -->
+      <!-- <link rel="stylesheet" href="/css/font-awesome.min.css"> -->
+
+
+    <!-- js -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/application.min.js"></script>
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <div class="topbar-innerdiv">
+          <div class="col-lg-5 col-md-5 col-sm-7 col-xs-7">
+            <ul class="topbar-socialicons">
+              <li><a href="https://www.facebook.com/pages/Tah/633568926721880" target="_blank"><i class="fa fa-facebook"></i></a></li>           
+              <li><a href="https://twitter.com/tah_io" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://instagram.com/tah-io" target="_blank"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://plus.google.com/+TahIoble/posts" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="https://www.youtube.com/channel/UCY7RNCi0S8jQDE3BZQw5Gwg" target="_blank"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="https://github.com/tah-io" target="_blank"><i class="fa fa-github"></i></a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-3 col-md-3 col-sm-5 col-sm-5 pull-right searchbox">
+            <form id="frmSearch" class="search2" method="get" />
+            <input id="keywords" size="24" placeholder="Search...">
+          </div>
+        </div>
+      </div>
+      <div class="logo_div">
+        <div class="logo_inner_div">
+          <div class="col-lg-6 col-md-6 col-sm-7 col-xs-7">
+            <img src="/img/header-tah-logo-for-doc-page.png" />
+          </div>
+          <div class="col-lg-5 col-md-5 col-sm-5 col-sm-5 preorder_div">
+            <a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank"><img src="/img/buy-now.png" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="menu_div_one">
+        <div class="menu_innerdiv_one">
+          <ul class="menu_list_one">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="http://blog.tah.io">Blog</a></li>
+            <li><a href="/library">Library</a></li>
+            <li><a href="/showcase">Showcase</a></li>
+            <li><a href="/apps">Apps</a></li>
+            <li><a href="/contributing">Contributing</a></li>
           </ul>
-        </li>
-        <li><a href="http://discuss.tah.io" target="_blank">Discuss</a></li>
-        <li><a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank" class="button special">Pre-order now</a></li>
-      </ul>
-    </nav>
-  </header>
+        </div>
+      </div>
+    </header>
 
- 
-  <!-- Main -->
-  <article class="docs">
-    <center><img src="/images/tah_new.jpg" width="80px" id="tah_mid_logo"/></center>
-    <section class="wrapper custom_container">
-      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
-        <h3 class="lib_fn_heading">int read()</h3>
+    <div class="container containerdocs">
+      <div class="text-docs">
+        <h1 class="page_heading">int read()</h1>
 
-        <div class="function_heading">Description</div>
+        <div class="docshead2">Description</div>
 
-        <p>Reads incoming serial data. read() inherits from the Stream utility class.</p><br/>
+        <p>Reads incoming serial data. read() inherits from the Stream utility class.</p>
         
-        <div class="function_heading">Syntax</div>
-        <div class="example_code">
+        <div class="docshead2">Syntax</div>
+        <p class="example_code">
           <pre>TAH.read();</pre>
-        </div><br/>
-        
+        </p>
 
-        <div class="function_heading">Parameters</div>
-        <div class="example_code">
+        <div class="docshead2">Parameters</div>
+        <p class="example_code">
           <pre>None</pre>
-        </div><br/>
+        </p>
 
-        <div class="function_heading">Returns</div>
-        <div class="example_code">
+        <div class="docshead2">Returns</div>
+        <p class="example_code">
           <pre>int - The first byte of incoming serial data available on Tah BLE Rx Pin (or -1 if no data is available)</pre>
-        </div><br/>
+        </p>
 
-        <div class="function_heading">Example</div>
-          <div class="example_code">
-            <pre>
+        <div class="docshead2">Example</div>
+        <p class="example_code">
+          <pre>
 TAH myTAH;
 int incomingByte =0;
 
@@ -109,20 +122,21 @@ void loop()
     Serial.println(incomingByte);   //print data on Tah serial terminal
   }
 }
-            </pre>
-          </div>
-        </div>
-      <center><strong><a href="index.html">&#x226a; Back</a></strong></center>
-    </section>
-  </article>
+          </pre>
+        </p>
+      </div>
+    </div>
 
-  <footer id="footer">
-    <ul class="icons">
-      <li><a href="http://twitter.com/tah_io" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
-      <li><a href="https://www.facebook.com/pages/Tah/633568926721880" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
-      <li><a href="http://github.com/tah-io" class="icon circle fa-github"><span class="label">Github</span></a></li>
-    </ul>
-    <span class="copyright">&copy; <a href="http://revealinghour.in">Revealing Hour Creations.</a> All rights reserved. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-  </footer>
-</body>
+    <div id="totopscroller"></div>
+    <script>
+      $(function(){
+        $('#totopscroller').totopscroller({link:'http://www.jqueryscript.net'});
+      })
+    </script>
+    <!-- search box -->
+    <script type="text/javascript"> var myHilitor; document.addEventListener("DOMContentLoaded", function()
+     { myHilitor = new Hilitor2("playground"); myHilitor.setMatchType("left"); }, false); 
+      document.getElementById("keywords").addEventListener("keyup", function() { myHilitor.apply(this.value); }, false);
+    </script>
+  </body>
 </html>

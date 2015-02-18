@@ -1,0 +1,123 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+  <title>Tah Docs</title>
+
+  <!-- css -->
+    <link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'> 
+    <link rel="stylesheet" href="/css/application.min.css"> 
+    <link rel="stylesheet" href="/css/menubar.css">
+    <link rel="stylesheet" href="/css/blogpagecss.css">
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/totop.css"> -->
+    <!-- <link rel="stylesheet" href="/css/font-awesome.min.css"> -->
+
+
+  <!-- js -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/application.min.js"></script>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="topbar-innerdiv">
+        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-7">
+          <ul class="topbar-socialicons">
+            <li><a href="https://www.facebook.com/pages/Tah/633568926721880" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/tah_io" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://instagram.com/tah-io" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://plus.google.com/+TahIoble/posts" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCY7RNCi0S8jQDE3BZQw5Gwg" target="_blank"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="https://github.com/tah-io" target="_blank"><i class="fa fa-github"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-3 col-md-3 col-sm-5 col-sm-5 pull-right searchbox">
+          <form id="frmSearch" class="search2" method="get" />
+          <input id="keywords" size="24" placeholder="Search...">
+        </div>
+      </div>
+    </div>
+    <div class="logo_div">
+      <div class="logo_inner_div">
+        <div class="col-lg-6 col-md-6 col-sm-7 col-xs-7">
+          <img src="/img/header-tah-logo-for-doc-page.png" />
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-sm-5 preorder_div">
+          <a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank"><img src="/img/buy-now.png" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="menu_div_one">
+      <div class="menu_innerdiv_one">
+        <ul class="menu_list_one">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="http://blog.tah.io">Blog</a></li>
+          <li><a href="/library">Library</a></li>
+          <li><a href="/showcase">Showcase</a></li>
+          <li><a href="/apps">Apps</a></li>
+          <li><a href="/contributing">Contributing</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="container containerdocs">
+    <div class="text-docs">
+
+      <h1 class="page_heading">Contributing</h1>
+
+      <p>The source code for all the Tah smartphone apps is open source and is hosted on GitHub. If you are looking to contribute to our efforts of making Tah an awesome platform for building amazing things using Bluetooth, join us !</p>
+
+      <h2 class="docshead2">Apps</h2>
+      <p>Each app has been developed for iOS and Android, though some are still in the works. We have a git repo on GitHub for each app, with the iOS and Android source codes as git submodules.
+
+      <blockquote><p>Submodules allow you to keep a Git repository as a subdirectory of another repository</p></blockquote>
+
+      <p>So for example, you'll find the source code for the Tah-iOS and the Tah-Android apps inside a repository called Tah.</p>
+
+      <h2 class="docshead2">Sketches</h2>
+      <p>You will notice that the above repository also has a folder called ArdSCL. This consists of the sketch that will be uploaded on the Tah when using the Tah app (iOS or Android).</p>
+
+      <h2 class="docshead2">Begin Contributing</h2>
+      <p>To contribute begin by forking the repo that you want to contribute to.</p>
+
+      <ul>
+        <li>Click on the repository that you want to contribute to :
+          <img src="/img/Screen%20Shot%202015-02-05%20at%2014.11.30.png" alt="" />
+        </li>
+        <li>Fork the repository, I'll be contributing to the Tah-iOS app in this example :
+          <img src="/img/Screen%20Shot%202015-02-05%20at%2014.15.22.png" alt="" />
+        </li>
+        <li><p>A copy of this repository will be created in your account. You can now make changes to it.
+          <img src="/img/Screen%20Shot%202015-02-05%20at%2014.16.18.png" alt="" /></p>
+        </li>
+        <li><p>Clone this repo and you can make changes to the source code.</p></li>
+        <li>Once you have made the changes, you can send a pull request. Click the marked button on your repo :
+          <img src="/img/Screen%20Shot%202015-02-05%20at%2014.16.18%202.png" alt="" />
+        </li>
+      </ul>
+      
+  </div>
+
+  <div id="totopscroller"></div>
+  <script>
+    $(function(){
+      $('#totopscroller').totopscroller({link:'http://www.jqueryscript.net'});
+    })
+  </script>
+  <!-- search box -->
+  
+  <script type="text/javascript"> var myHilitor; document.addEventListener("DOMContentLoaded", function()
+   { myHilitor = new Hilitor2("playground"); myHilitor.setMatchType("left"); }, false); 
+    document.getElementById("keywords").addEventListener("keyup", function() { myHilitor.apply(this.value); }, false);
+  </script>
+</body>
+</html>
