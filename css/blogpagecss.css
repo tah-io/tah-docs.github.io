@@ -506,7 +506,8 @@ pre {
   .logo_inner_div > div {
     float: left;
     text-align: center;
-    width: 100%;
+    /*width: 100%;*/
+    border-bottom: 1px solid #dedddd;
   }
 
   .page_heading {
@@ -520,12 +521,14 @@ pre {
 
   .header-logo {
     float: left;
-    width: 40%;
+    width: 90px;
+    margin-top: -3px;
   }
 
   .cta-buy-now {
     float: right;
-    margin-top: 3%;
+    margin-top: 0%;
+    width: 70px;
   }
 
   /* Mobile Menu */
@@ -588,15 +591,15 @@ pre {
   }
 
   #nav-trigger {
-    text-align: right; 
-    border-bottom: 1px solid #dedddd;
+    text-align: right;
+    margin-top: -10px;
   }
 
   #nav-trigger span {
     color: black;
     cursor: pointer;
     display: inline-block;
-    padding: 10px 25px;
+    /*padding: 10px 25px;*/
     font-size: 30px;
     text-transform: uppercase;
   }
