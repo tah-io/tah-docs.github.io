@@ -7,19 +7,16 @@
   <title>Tah Library</title>
 
   <!-- css -->
-    <link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>  
-    <link rel="stylesheet" href="/css/application.min.css"> 
-    <link rel="stylesheet" href="/css/menubar.css">
-    <link rel="stylesheet" href="/css/blogpagecss.css">
-    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
-    <!-- <link rel="stylesheet" href="/css/totop.css"> -->
-    <!-- <link rel="stylesheet" href="/css/font-awesome.min.css"> -->
-
+  <link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>  
+  <link rel="stylesheet" href="/css/application.min.css"> 
+  <link rel="stylesheet" href="/css/menubar.css">
+  <link rel="stylesheet" href="/css/blogpagecss.css">
+  <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" href="/css/totop.css"> -->
+  <!-- <link rel="stylesheet" href="/css/font-awesome.min.css"> -->
 
   <!-- js -->
-  <script src="/js/jquery.min.js"></script>
   <script src="/js/application.min.js"></script>
-
   <!-- Mobile Specific Metas
   ================================================== -->
 
@@ -39,19 +36,19 @@
           </ul>
         </div>
 
-        <div class="col-sm-3 col-md-3 col-sm-5 col-sm-5 pull-right searchbox">
+          <!-- <div class="col-sm-3 col-md-3 col-sm-5 col-sm-5 pull-right searchbox">
           <form id="frmSearch" class="search2" method="get" />
           <input id="keywords" size="24" placeholder="Search...">
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="logo_div">
       <div class="logo_inner_div">
-        <div class="col-lg-6 col-md-6 col-sm-7 col-xs-7">
-          <img src="/img/header-tah-logo-for-doc-page.png" />
-        </div>
-        <div class="col-lg-5 col-md-5 col-sm-5 col-sm-5 preorder_div">
-          <a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank"><img src="/img/buy-now.png" /></a>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <img src="/img/header-tah-logo-for-doc-page.png" class="header-logo"/>
+          <a href="https://www.crowdsupply.com/revealing-hour/tah-open-ble-arduino-board" target="_blank">
+            <img src="/img/buy-now.png" class="cta-buy-now"/>
+          </a>
         </div>
       </div>
     </div>
@@ -59,13 +56,35 @@
       <div class="menu_innerdiv_one">
         <ul class="menu_list_one">
           <li><a href="/index.html">Home</a></li>
-          <li><a href="http://blog.tah.io">Blog</a></li>
+          <li><a href="http://tah.io/start">Getting Started</a></li>
+          <li><a href="/tutorials">Tutorials</a></li>
           <li><a href="/library">Library</a></li>
           <li><a href="/showcase">Showcase</a></li>
-          <li><a href="/apps">Apps</a></li>
           <li><a href="/contributing">Contributing</a></li>
+          <li><a href="/apps">Apps</a></li>
+          <li><a href="http://blog.tah.io">Blog</a></li>
+          <li><a href="http://discuss.tah.io">Forum</a></li>
         </ul>
       </div>
+    </div>
+  
+    <div id="smallNav" >
+      <div id="nav-trigger">
+        <span class="">&#8801;</span>
+      </div>
+      <nav id="nav-mobile">
+        <ul class="" style="display: none;">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="http://tah.io/start">Getting Started</a></li>
+          <li><a href="/tutorials">Tutorials</a></li>
+          <li><a href="/library">Library</a></li>
+          <li><a href="/showcase">Showcase</a></li>
+          <li><a href="/contributing">Contributing</a></li>
+          <li><a href="/apps">Apps</a></li>
+          <li><a href="http://blog.tah.io">Blog</a></li>
+          <li><a href="http://discuss.tah.io">Forum</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
@@ -79,9 +98,9 @@
 
       <p>In this tutorial we are going to establish a connection between two Tahs and use one Tah to control a Robot with a joystick designed with another Tah.</p>
 
-      <h3>Requirements</h3>
+      <h2 class="docshead2">Requirements</h2>
 
-      <ul class="task-list">
+      <ul>
         <li>Two Tahs</li>
         <li><a href="https://www.sparkfun.com/datasheets/Components/SMD/adxl335.pdf">ADXL335</a> 3-axis accelerometer</li>
         <li><a href="http://www.ti.com/lit/ds/symlink/l293d.pdf">L293D</a> motor shield</li>
@@ -106,52 +125,63 @@
 
       <p>This tutorial is divided into two major parts first one Tah transmitter section and other is receiver on the Robot which will control the motions of robot.</p>
 
-      <h3>Step 1</h3>
+      <h2 class="docshead2">Step 1</h2>
 
       <p>Lets first build the transmitter section with the Tah and the 3-axis accelerometer that will send commands to the receiver. Cut the PCB to mount the ADXL335 and build the LM7805 voltage regulator circuit to power up the Tah transmitter. The A0, A1 and A2 analog channels are used to interface the accelerometer.</p>
 
-      <h3>Step 2</h3>
+      <h2 class="docshead2">Step 2</h2>
 
       <p>Now lets start bulding the mechanical assembly for robot with Tah.</p>
 
       <p>Cut the base for the robot as per the design and mount the motors on the base of the robot and fix the wheels on the sides and the center caster wheel at the center.</p>
       
-      <h3>Step 3</h3>
+      <h2 class="docshead2">Step 3</h2>
 
       <p>Once the robot's mechanical assembly is ready, build it's electronic circuit. To drive the robot we need an L293D motor driver shield or you can design your own motor driver circuit as well.</p>
 
       <p>Build the power supply section for the Tah on the robot with LM7805 voltage regulator with filter capacitor. Four digital I/Os pins - 9, 10, 11 and 12 are used to control the DC motor. The LDR is interfaced with pin A5 of the analog channel and the power LEDs with SL100 transistor are interfaced with the digital I/O pin 4. In darkness, the front LEDs will glow.</p>
 
-      <h3>Step 4</h3>
+      <h2 class="docshead2">Step 4</h2>
 
       <p>Here we've programmed the logic for 5 different motions of the robot i.e, forward, reverse, left, right and center that can be used with the joystick designed with Tah to control the robot.</p>
 
       <p>Lets connect the motors and Tah with the motor shield and give a seperate 9V/12V DC power supply.</p>
 
-      <h3>Step 5</h3>
+      <h2 class="docshead2">Step 5</h2>
 
       <p>Download and <a href="http://docs.tah.io/">install</a> the <a href="https://github.com/tah-io/Tah_Arduino_Library">Tah Arduino Library</a> onto your existing Arduino IDE. Once done, upload the <a href="https://github.com/tah-io/Tah_Arduino_Library/tree/master/examples/TahAsMaster">TahAsMaster sketch</a> onto the master Tah, and upload the <a href="https://github.com/tah-io/Tah_Arduino_Library/tree/master/examples/Test">Tah Test sketch</a> onto the slave Tah.
 
-      In TahAsMaster, open the serial terminal and run the following command to get the MAC address of other BLE(TAH)
+      In TahAsMaster, open the serial terminal and run the following command to get the MAC address of other BLE(TAH)</p>
 
       <p class="example_code"><pre>AT+DISC?</pre></p>
 
-      Enter this command to connect to the 0 index Tah BLE
+      <p>Enter this command to connect to the 0 index Tah BLE</p>
       
       <p class="example_code"><pre>AT+CONN[0]</pre></p>        
     
-      <h3>Step 6</h3>
+      <h2 class="docshead2">Step 6</h2>
 
       <p>Upload the <a href="https://github.com/tah-io/Tah_Arduino_Library/blob/master/examples/TahtoTahCommunication/TAHRobotJoystick.ino">Tah transmitter sketch</a> onto the master, and the <a href="https://github.com/tah-io/Tah_Arduino_Library/blob/master/examples/TahtoTahCommunication/TAHRobotSlave.ino">Tah Robot control</a> sketch onto the slave Tah.</p>
 
       <p>Put the Tah transmitter into the Tah joystick, plug other onto the robot and power up both Tahs. When both the Tahs are up and running, they connect immediately and joystick will start sending data to the robot.</p>
     
-      <h3>Step 7</h3>
+      <h2 class="docshead2">Step 7</h2>
 
       <p>Now just control the robot with the joystick by tilting it in the direction you'd like it to move and keep it horizontal to stop the robot.</p>
 
     </div>
   </div>
+
+  <footer>
+    <div class="bottombar">
+      <div class="bottombar-innerdiv">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footnote">
+          &copy; Revealing Hour Creations. All rights reserved.<br/>
+          The text of the Tah reference is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a>.<br/>Code samples in the reference are released into the public domain.
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <div id="totopscroller"></div>
   <script>
@@ -160,10 +190,9 @@
     })
   </script>
   <!-- search box -->
-  
-  <script type="text/javascript"> var myHilitor; document.addEventListener("DOMContentLoaded", function()
+  <!-- <script type="text/javascript"> var myHilitor; document.addEventListener("DOMContentLoaded", function()
    { myHilitor = new Hilitor2("playground"); myHilitor.setMatchType("left"); }, false); 
     document.getElementById("keywords").addEventListener("keyup", function() { myHilitor.apply(this.value); }, false);
-  </script>
+  </script> -->
 </body>
 </html>

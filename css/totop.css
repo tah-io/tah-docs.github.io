@@ -14,7 +14,7 @@
 #totopscroller a {
   background: url("../img/30-x-30-back-to-top-icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
   border: 0 none;
-  height: 30px;
+  height: 40px;
   margin: 0;
   text-decoration: none;
   width: 30px;
@@ -43,7 +43,7 @@
   left: 0;
 }
 
-@media only screen and (max-width:600px) and (min-width:300px){
+@media only screen and (max-width:600px) and (min-width:250px){
   #totopscroller {
     position: fixed;
     right: 15px;
