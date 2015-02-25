@@ -510,7 +510,19 @@ pre {
   margin-bottom: 0px;
 }
 
+#nav-mobile {
+  display: none;
+}
+
+.lib_table {
+  width: 60%;
+}
+
 @media only screen and (max-width:600px) and (min-width:250px){
+
+  #nav-mobile {
+    display: block;
+  }
 
   .stacked {
     display: block;
