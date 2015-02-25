@@ -291,7 +291,6 @@ a:hover, a:focus, a:active {
   background-color: #f8f8f8;
   padding: 25px 25px 40px;
   font-size: 19px;
-  /*border: 1px solid #e0e0e0;*/
 }
 
 .text-docs img {
@@ -323,20 +322,21 @@ body {
   padding: 0;
 }
 
+.text-docs {
+  font-size: 15px;
+}
+
 .text-docs > p {
   color: #393737;
-  font-size: 15px;
 }
 
 .text-docs > ul {
   color: #393737;
-  font-size: 15px;
   list-style: circle;
 }
 
 .text-docs > blockquote {
   color: #393737;
-  font-size: 15px;
 }
 
 .text-docs
@@ -487,7 +487,38 @@ pre {
   display: none;
 }
 
+.stacked {
+  display: none;
+}
+
+.linear {
+  display: block;
+}
+
+.header-logo {
+  width: 85px;
+}
+
+.header-text {
+  font-size: 35px;
+  padding-left: 7px;
+  vertical-align: middle;
+}
+
+.back_link {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
 @media only screen and (max-width:600px) and (min-width:250px){
+
+  .stacked {
+    display: block;
+  }
+
+  .linear {
+    display: none;
+  }
 
   .topbar-innerdiv > div {
     float: none!important;
@@ -521,8 +552,14 @@ pre {
 
   .header-logo {
     float: left;
-    width: 90px;
+    width: 30px;
     margin-top: -3px;
+  }
+
+  .header-text {
+    font-size: 17px;
+    padding-left: 7px;
+    vertical-align: middle;
   }
 
   .cta-buy-now {
@@ -599,8 +636,12 @@ pre {
     color: black;
     cursor: pointer;
     display: inline-block;
-    /*padding: 10px 25px;*/
     font-size: 30px;
     text-transform: uppercase;
+  }
+
+  .page_heading {
+    font-size: 24px;
+    text-align: center;
   }
 }
