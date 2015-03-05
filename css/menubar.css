@@ -87,8 +87,8 @@
 
 .menu_list_one a {
   color: #333333;
-  font-family: 'Quattrocento', serif;
-  font-size: 15px;
+  font-family:'Avenir Next W01';
+  font-size: 17px;
 }
 
 .menu_list_one a:hover {
@@ -104,7 +104,7 @@
 #keywords {
   border: 1px solid #e7e6e6;
   color: #000 !important;
-  font-family: 'Quattrocento', serif;
+  font-family:'Avenir Next W01';
   padding: 3px 10px;
   width: 100%;
 }

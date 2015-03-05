@@ -86,7 +86,7 @@ code {
   border: 1px solid #d9d9d9;
   color: #1b91a1;
   float: left;
-  font-family: 'Quattrocento', serif;
+  font-family:'Avenir Next W01';
   font-size: 14px;
   padding: 10px 10px;
   width: 100%;
@@ -262,7 +262,6 @@ a:hover, a:focus, a:active {
 
 .entry-title > a {
   color: #0e7582 !important;
-  font-family: 'Quattrocento', serif;
   font-size: 22px;
   font-weight: 300;
   letter-spacing: 0;
@@ -277,9 +276,9 @@ a:hover, a:focus, a:active {
 
 .docshead2 {
   color: #0e7582;
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 300 !important;
-  /*text-transform: uppercase;*/
+  margin-bottom: 4px;
 }
 
 .docshead3 > img {
@@ -310,7 +309,7 @@ a:hover, a:focus, a:active {
 body {
   background-color: #fff;
   color: #333333;
-  font-family: 'Quattrocento', serif;
+  font-family:'Avenir Next W01';
 }
 
 .page-id-87 .entry-title {
@@ -323,7 +322,7 @@ body {
 }
 
 .text-docs {
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .text-docs > p {
@@ -365,7 +364,6 @@ body {
 
 .achive-datediv {
   color: #198fa0;
-  font-family: 'Quattrocento', serif;
   font-size: 13px;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -379,7 +377,6 @@ body {
 .heading-blogs > h2 {
   background: url("../img/1.png") no-repeat scroll 0 0 / 100% auto rgba(0, 0, 0, 0);
   color: #fff;
-  font-family: 'Quattrocento', serif;
   font-size: 34px;
   letter-spacing: 0;
   margin: 0 auto;
@@ -437,7 +434,6 @@ body {
 /*  docs */
 .docshead3 {
   color: #0e7582;
-  font-family: 'Quattrocento', serif;
   font-size: 17px;
   font-weight: 300 !important;
   margin-bottom: 0;
@@ -569,8 +565,8 @@ pre {
   }
 
   .header-text {
-    font-size: 17px;
-    padding-left: 7px;
+    font-size: 18px;
+    padding-left: 0px;
     vertical-align: middle;
   }
 
@@ -609,7 +605,7 @@ pre {
     display: block;
     padding: 0 5px;
     text-align: left;
-    font-size: 13px;
+    font-size: 15px;
     text-decoration:none;
     color: black;
   }
