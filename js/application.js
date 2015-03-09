@@ -598,4 +598,29 @@ $(document).ready(function (){
       $(this).addClass('open');
     }
   });
+
+  $(".share-gplus").click( function() {
+    event.preventDefault();
+    current_page =  window.location.pathname;
+    $(this).attr("href", $(this).attr("href") + current_page);
+    window.open($(this).attr("href"), "popupWindow", "width=600,height=600,scrollbars=yes");
+  });
+
+  (function () {
+    current_page =  window.location.pathname;
+    link = "http://docs.tah.io" + current_page;
+    title = $(".page_heading").text() + " " ;
+    default_share = "Check%20out%20this%20post%20by%20@tah_io%20:%20" + title + link;
+    $(".share-tw").attr("href", $(".share-tw").attr("href") + default_share);
+  })();
+
+
+  $(".share-btn").click(function(){
+    if ($(".share-tw, .share-gplus").is(":visible")) {
+      $(".share-tw, .share-gplus").fadeOut(500);
+    } else {
+      $(".share-tw, .share-gplus").fadeIn(500);
+    }
+  });
+
 });

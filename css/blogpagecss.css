@@ -1,3 +1,33 @@
+.share-btn {
+  position: fixed;
+  right: 75px;
+  bottom: 150px;
+  color: #838383;
+  display: none;
+}
+
+/*.share-fb {
+  position: fixed;
+  right: 82px;
+  bottom: 205px;
+  color: #3B5998;
+}*/
+
+.share-tw {
+  position: fixed;
+  right: 75px;
+  bottom: 260px;
+  color: #4099FF;
+}
+
+.share-gplus {
+  position: fixed;
+  right: 72px;
+  bottom: 205px;
+  /*bottom: 150px;*/
+  color: #d34836;
+}
+
 .entry-title {
   color: #000 !important;
   font-size: 24px !important;
@@ -155,6 +185,7 @@ html {
   padding: 4px 3px !important;
   width: 450px !important;
 }
+
 body {
   background-color: #fff;
 }
@@ -514,7 +545,32 @@ pre {
   width: 60%;
 }
 
+.shareable {
+  display: block;
+}
+
 @media only screen and (max-width:600px) and (min-width:250px){
+
+  .share-btn {
+    position: fixed;
+    right: 30px;
+    bottom: 110px;
+    color: #838383;
+    display: block;
+    cursor: pointer;
+  }
+
+  .share-gplus {
+    display: none;
+    right: 28px;
+    bottom: 155px;
+  }
+
+  .share-tw {
+    display: none;
+    right: 28px;
+    bottom: 210px;
+  }
 
   #nav-mobile {
     display: block;
