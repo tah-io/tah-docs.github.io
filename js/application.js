@@ -614,12 +614,18 @@ $(document).ready(function (){
     $(".share-tw").attr("href", $(".share-tw").attr("href") + default_share);
   })();
 
+  (function () {
+    current_page =  window.location.pathname;
+    fb_link = "http://docs.tah.io" + current_page;
+    title_link  = "&amp;p[title]=" + $(".page_heading").text(); 
+    $(".share-fb").attr("href", $(".share-fb").attr("href") + fb_link + title_link);
+  })();
 
   $(".share-btn").click(function(){
-    if ($(".share-tw, .share-gplus").is(":visible")) {
-      $(".share-tw, .share-gplus").fadeOut(500);
+    if ($(".share-tw, .share-gplus, .share-fb").is(":visible")) {
+      $(".share-tw, .share-gplus, .share-fb").fadeOut(500);
     } else {
-      $(".share-tw, .share-gplus").fadeIn(500);
+      $(".share-tw, .share-gplus, .share-fb").fadeIn(500);
     }
   });
 

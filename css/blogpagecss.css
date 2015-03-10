@@ -24,12 +24,12 @@
   display: none;
 }
 
-/*.share-fb {
+.share-fb {
   position: fixed;
   right: 82px;
   bottom: 205px;
   color: #3B5998;
-}*/
+}
 
 .share-tw {
   position: fixed;
@@ -41,8 +41,7 @@
 .share-gplus {
   position: fixed;
   right: 72px;
-  bottom: 205px;
-  /*bottom: 150px;*/
+  bottom: 150px;
   color: #d34836;
 }
 
@@ -584,10 +583,16 @@ pre {
     bottom: 155px;
   }
 
+  .share-fb {
+    display: none;
+    right: 35px;
+    bottom: 205px;
+  }
+
   .share-tw {
     display: none;
     right: 28px;
-    bottom: 210px;
+    bottom: 255px;
   }
 
   #nav-mobile {
