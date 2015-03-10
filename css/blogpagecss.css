@@ -1,3 +1,21 @@
+.backlink {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.next-box, .prev-box {
+  border: 1px solid #0e7582;
+  padding: 5px 0px 5px 0px;
+}
+
+.navigation-desc {
+  font-size: 10px;
+}
+
+.navigation {
+  text-align: center;
+}
+
 .share-btn {
   position: fixed;
   right: 75px;
