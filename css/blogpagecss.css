@@ -479,6 +479,10 @@ body {
   display: none;
 }
 
+footer a {
+  color: #0e7582;
+}
+
 /*  docs */
 .docshead3 {
   color: #0e7582;
