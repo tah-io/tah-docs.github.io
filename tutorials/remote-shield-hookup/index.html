@@ -7,14 +7,14 @@
   <title>Tah Docs</title>
 
   <!-- css -->
-  <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/a6555b0e-9541-40d2-ab30-147c200fd4db.css"/>
+  <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/a6555b0e-9541-40d2-ab30-147c200fd4db.css"/>  
   <link rel="stylesheet" href="/css/application.min.css"> 
   <link rel="stylesheet" href="/css/menubar.css">
   <link rel="stylesheet" href="/css/blogpagecss.css">
 
   <!-- js -->
   <script src="/js/application.min.js"></script>
-
+  <script src="/js/widgets.js"></script>
   <!-- Mobile Specific Metas
   ================================================== -->
 
@@ -90,21 +90,72 @@
     </nav>
   </header>
 
-  <div class="container containerdocs" style="height:75%;">
+  <div class="container containerdocs">
     <div class="text-docs">
+      <h1 class="page_heading">Remote Shield Hookup</h1>
 
-      <h1 class="page_heading">Tutorials</h1>
+      <p>The Tah Remote Shield helps you create a universal remote with the combination of Tah and its Remote App. The Remote Shield has 1 Infrared Receiver and 4 Infrared Transmitter leds assembled on 4 corners of the board. This kind of led assembly helps in achieving ~360 degree transmission of signals.</p>
 
-      <p>Once you have controlled a simple LED on the Tah, you can follow the tutorials below to build more amazing things or more complex stuff</p>
+      <h2 class="docshead2">Requirements</h2>
 
       <ul>
-        <li><a href="/tutorials/remote-shield-hookup">Remote Shield hookup</a></li>
-        <li><a href="/tutorials/tah-to-tah">Tah to Tah</a></li>
-        <li><a href="/tutorials/tah-with-linux">Tah with Linux</a></li>
+        <li>1 Tah</li>
+        <li>1 Remote shield</li>
+        <li><a href="https://itunes.apple.com/us/app/tah-remote/id966808116?ls=1&mt=8">Tah Remote App</a> installed</li>
       </ul>
-            
-    </div>   
+
+      <h2 class="docshead2">Step 1</h2>
+
+      <p>Stack the remote shield on the Tah as shown in the image below.</p>
+
+      <p><img src="/img/Remote-hookup-2.jpg" width="100%"></p>
+
+      <h2 class="docshead2">Step 2</h2>
+
+      <p>Insert the Tah into the USB port and upload the Remote sketch given in the Tah Arduino example folder. (If you haven't downloaded the Tah arduino library and examples then you can get it from <a href="https://github.com/tah-io/Tah_Arduino_Library">here</a>.</p>
+      
+      <h2 class="docshead2">Step 3</h2>
+
+      <p>Download the Tah Remote <a href="https://itunes.apple.com/us/app/tah-remote/id966808116?ls=1&mt=8">app</a> on your smartphone.</p>
+
+      <h2 class="docshead2">Step 4</h2>
+
+      <p>Open up the Remote App and connect your smartphone to the Tah.</p>
+
+      <h2 class="docshead2">Step 5</h2>
+
+      <p>In the app, activate the remote programming mode.</p>
+    
+      <h2 class="docshead2">Step 6</h2>
+
+      <p>Now point any infrared remote controller you want to sync towards the Tah and press any button, you will hear a single beep in the app once the value has been received. Now press the button on the remote interface in the app to which you wish to assign the received signal. Once you press the button in the app then the received value will get assigned to that button and you will hear the beep twice. You can repeat this exercise for rest of the buttons.</p>
+
+      <h2 class="docshead2">Step 7</h2>
+
+      <p>Once you finish syncing all the remote buttons, disable the remote programming mode.</p>
+
+      <h2 class="docshead2">Step 8</h2>
+
+      <p>Now if you press any button in the app then the signal is transmitted to the Tah and the Tah in turn broadcasts those signal with the remote shield. So in this way you can sync any remote controller with the Tah remote app and control infrared devices like TVs, ACs, Music Systems etc. from your smartphone.</p>
+
+      <h2 class="docshead2">Note</h2>
+      <p>While syncing the value of the infrared remote controller with the app, if you get an alert of 'remote not supported', then try holding the remote properly pointed towards the shield and if the error persists, it means the protocol of your remote controller is not yet supported by the Tah Remote Sketch.</p>
+
+      <br/><div class="backlink"><a href="/showcase/"><i class="fa fa-angle-double-left"></i> Back to showcase</a></div>
+
+    </div>
   </div>
+
+  <div class="shareable">
+    <a href="https://twitter.com/intent/tweet?text=" class="share-tw"><i class="fa fa-twitter fa-3x"></i></a>
+    <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=" target="_blank" class="share-fb">
+      <i class="fa fa-facebook fa-3x"></i>
+    </a>
+    <a href="https://plus.google.com/share?url=https://docs.tah.io" target="_blank" class="share-gplus">
+      <i class="fa fa-google-plus fa-3x"></i>
+    </a>
+  </div>
+  <i class="fa fa-share-alt fa-3x share-btn"></i>
 
   <footer>
     <div class="bottombar">
@@ -125,13 +176,13 @@
   </script>
 
   <script>
-    // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    //   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    //   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    // ga('create', 'UA-36872186-2', 'auto');
-    // ga('require', 'displayfeatures');
-    // ga('send', 'pageview');
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-36872186-2', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
   </script>
   <!-- search box -->
   <!-- <script type="text/javascript"> var myHilitor; document.addEventListener("DOMContentLoaded", function()
